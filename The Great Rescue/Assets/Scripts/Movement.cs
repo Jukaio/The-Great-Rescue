@@ -48,6 +48,12 @@ public class Movement : MonoBehaviour
         transform.Translate(Time.deltaTime * speed * movement);
     }
 
+    public void moveRight(float speed)
+    {
+        Vector2 movement = new Vector2(1f, 0);
+        transform.Translate(Time.deltaTime * speed * movement);
+    }
+
 
 
 

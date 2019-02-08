@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
 
 {
+    public float healthPoints;
+
     [Tooltip("if selected, it creates a Rigidbody instead of a Character Controller")]
     public bool ifRigidbody;
     [Tooltip("if selected, it adds force to the Rigidbody. It causes acceleration")]
@@ -28,6 +30,11 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb2d;
     public float speed;
     Vector3 moveDirection = Vector3.zero;
+
+    public GameObject shot;
+    public Transform shotSpawn;
+    public float fireRate;
+    private float nextFire;
 
 
 
@@ -48,11 +55,14 @@ public class PlayerController : MonoBehaviour
 
         
         playerMovement = gameObject.GetComponent<Movement>();
-    
+        playerMovement = gameObject.AddComponent<Movement>();
+
+
 
     }
     void Update()
     {
+        //Movement stuff
         if (ifRigidbody == true && acceleration == true)
             //playerMovement.movingWithRb2d(rb2d, Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), speed);
 
@@ -64,9 +74,40 @@ public class PlayerController : MonoBehaviour
 
         else if (ifRigidbody == false)
         {
-            
+
 
         }
+
+
+        if (Input.GetKey("space") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        }
+
+        //Death check
+        if (healthPoints == 0)
+            Destroy(gameObject);
+
+    }
+
+
+    //Damage methods
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+            healthPoints = ApplyDamage(healthPoints, 1);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+            healthPoints = ApplyDamage(healthPoints, 1);
+    }
+
+    float ApplyDamage(float health, float damage)
+    {
+        return health - damage;
     }
 
 
