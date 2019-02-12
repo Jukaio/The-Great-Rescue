@@ -36,10 +36,18 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     private float nextFire;
 
+    private bool damageBuff = false;
+    public float damageBuffCooldown;
+    public float damageBuffDuration;
+    private float damageBuffDurationBuffer;
+
+
 
 
     void Start()
     {
+        damageBuffDurationBuffer = damageBuffCooldown;
+        damageBuffCooldown = 0;
 
         if (ifRigidbody == true)
         {
@@ -83,26 +91,42 @@ public class PlayerController : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
         }
 
         //Death check
-        if (healthPoints == 0)
+        if (healthPoints <= 0)
             Destroy(gameObject);
 
+
+
     }
 
 
-    //Damage methods
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-            healthPoints = ApplyDamage(healthPoints, 1);
-    }
-
+    //Damage methods and heal
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
+        {
             healthPoints = ApplyDamage(healthPoints, 1);
+            Destroy(collision.gameObject);
+        }
+
+        else if (collision.gameObject.tag == "Heal")
+        {
+            healthPoints = ApplyDamage(healthPoints, -1);
+            Destroy(collision.gameObject);
+        }
+
+        else if (collision.gameObject.tag == "BuffDamge")
+        {
+            damageBuff = true;
+            GetComponent<BulletMover>().damage = 10;
+            Destroy(collision.gameObject);
+        }
+
+
+
     }
 
     float ApplyDamage(float health, float damage)
@@ -110,7 +134,10 @@ public class PlayerController : MonoBehaviour
         return health - damage;
     }
 
-
+    public bool returnDamageBuff()
+    {
+        return damageBuff;
+    }
 
 
 
