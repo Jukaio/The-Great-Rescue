@@ -12,8 +12,11 @@ public class BulletMover : MonoBehaviour
 
     void Start()
     {
-
         bulletMovement = gameObject.AddComponent<Movement>();
+        if(GameObject.Find("Player").GetComponent<PlayerController>().damageBuff== true)
+        {
+            damage *= GameObject.Find("Player").GetComponent<PlayerController>().damageMultiplier;
+        }
 
     }
 
@@ -31,9 +34,10 @@ public class BulletMover : MonoBehaviour
         {
             bulletMovement.moveLeft(speed);
 
-            if (gameObject.transform.position.x >= 11)
+            if (gameObject.transform.position.x <= -11)
                 Destroy(gameObject);
         }
+        
     }
 
 }

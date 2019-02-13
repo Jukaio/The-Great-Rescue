@@ -36,18 +36,16 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     private float nextFire;
 
-    private bool damageBuff = false;
-    public float damageBuffCooldown;
-    public float damageBuffDuration;
-    private float damageBuffDurationBuffer;
+    public bool damageBuff = false;
+    private float damageBuffDuration;
+    public float damageMultiplier;
+
 
 
 
 
     void Start()
     {
-        damageBuffDurationBuffer = damageBuffCooldown;
-        damageBuffCooldown = 0;
 
         if (ifRigidbody == true)
         {
@@ -98,6 +96,13 @@ public class PlayerController : MonoBehaviour
         if (healthPoints <= 0)
             Destroy(gameObject);
 
+        //Buff Duration
+        damageBuffDuration -= Time.deltaTime;
+        if (damageBuffDuration <= 0)
+        {
+            damageBuff = false;
+            damageBuffDuration = 0;
+        }
 
 
     }
@@ -118,14 +123,14 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        else if (collision.gameObject.tag == "BuffDamge")
+    //buffs/powerups
+        else if (collision.gameObject.tag == "BuffDamage")
         {
             damageBuff = true;
-            GetComponent<BulletMover>().damage = 10;
+            damageBuffDuration = collision.GetComponent<damageBuffData>().duration;
+            damageMultiplier = collision.GetComponent<damageBuffData>().multiplier;
             Destroy(collision.gameObject);
         }
-
-
 
     }
 
@@ -133,12 +138,6 @@ public class PlayerController : MonoBehaviour
     {
         return health - damage;
     }
-
-    public bool returnDamageBuff()
-    {
-        return damageBuff;
-    }
-
 
 
 }
