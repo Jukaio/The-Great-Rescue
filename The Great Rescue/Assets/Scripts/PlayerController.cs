@@ -116,12 +116,14 @@ public class PlayerController : MonoBehaviour
         {
             healthPoints = ApplyDamage(healthPoints, 1);
             Destroy(collision.gameObject);
+            HealthBarScript.health -= 1;
         }
 
         else if (collision.gameObject.tag == "Heal")
         {
             healthPoints = ApplyDamage(healthPoints, -1);
             Destroy(collision.gameObject);
+            HealthBarScript.health += 1;
         }
 
     //buffs/powerups
