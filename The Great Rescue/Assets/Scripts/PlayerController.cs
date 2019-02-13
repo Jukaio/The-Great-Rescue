@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private float nextFire;
 
     public bool damageBuff = false;
-    private float damageBuffDuration;
+    public float damageBuffDuration;
     public float damageMultiplier;
 
 
@@ -96,10 +96,11 @@ public class PlayerController : MonoBehaviour
         if (healthPoints <= 0)
             Destroy(gameObject);
 
-        //Buff Duration
+        //Buff data
         damageBuffDuration -= Time.deltaTime;
         if (damageBuffDuration <= 0)
         {
+            damageMultiplier = 0;
             damageBuff = false;
             damageBuffDuration = 0;
         }
