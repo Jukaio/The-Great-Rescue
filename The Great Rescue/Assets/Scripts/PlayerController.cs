@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
         {
             healthPoints = ApplyDamage(healthPoints, 1);
             Destroy(collision.gameObject);
-            HealthBarScript.health -= 1;
+            HealthBarScript.health -= 5;
         }
 
         else if (collision.gameObject.tag == "Heal")
