@@ -20,17 +20,6 @@ public class PlayerController : MonoBehaviour
 {
     public float healthPoints;
 
-    [Tooltip("if selected, it creates a Rigidbody instead of a Character Controller")]
-    public bool ifRigidbody;
-    [Tooltip("if selected, it adds force to the Rigidbody. It causes acceleration")]
-    public bool acceleration;
-
-    Movement playerMovement;
-    private CharacterController charController; // <- work on this, David!
-    Rigidbody2D rb2d;
-    public float speed;
-    Vector3 moveDirection = Vector3.zero;
-
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
@@ -41,47 +30,45 @@ public class PlayerController : MonoBehaviour
     public float damageMultiplier;
 
 
+    [SerializeField] private float distanceToMove;
+    [SerializeField] private float moveSpeed;
+    private bool moveToPoint = false;
+    private Vector3 endPosition;
+
+
 
 
 
     void Start()
     {
-
-        if (ifRigidbody == true)
-        {
-            rb2d = gameObject.AddComponent<Rigidbody2D>();
-            rb2d.bodyType = RigidbodyType2D.Dynamic;
-            rb2d.gravityScale = 0;
-            
-
-
-        }
-        else if (ifRigidbody == false)
-            charController = gameObject.AddComponent<CharacterController>();
-
-        
-        playerMovement = gameObject.GetComponent<Movement>();
-        playerMovement = gameObject.AddComponent<Movement>();
-
-
-
+        endPosition = transform.position;
     }
+
+    void FixedUpdate()
+    {
+        if (moveToPoint)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
+        }
+    }
+
     void Update()
     {
-        //Movement stuff
-        if (ifRigidbody == true && acceleration == true)
-            //playerMovement.movingWithRb2d(rb2d, Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), speed);
-
-            rb2d.velocity = new Vector2(Mathf.Lerp(0, Input.GetAxis("Horizontal") * speed, 0.8f),
-                                                Mathf.Lerp(0, Input.GetAxis("Vertical") * speed, 0.8f));
-
-        else if (ifRigidbody == true && acceleration == false)
-            playerMovement.movingWithoutRB(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), speed);
-
-        else if (ifRigidbody == false)
+        if (endPosition.y <= 3f)
         {
-
-
+            if (Input.GetKeyDown(KeyCode.W)) //Up
+            {
+                endPosition = new Vector3(endPosition.x, endPosition.y + distanceToMove, endPosition.z);
+                moveToPoint = true;
+            }
+        }
+        if (endPosition.y >= -2f)
+        {
+            if (Input.GetKeyDown(KeyCode.S)) //Down
+            {
+                endPosition = new Vector3(endPosition.x, endPosition.y - distanceToMove, endPosition.z);
+                moveToPoint = true;
+            }
         }
 
 
@@ -104,6 +91,7 @@ public class PlayerController : MonoBehaviour
             damageBuff = false;
             damageBuffDuration = 0;
         }
+
 
 
     }
