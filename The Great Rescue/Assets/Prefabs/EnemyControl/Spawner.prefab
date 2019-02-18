@@ -43,9 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d652f790c7222478abfafc03b72d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSpawn: {fileID: 4813120103282216822, guid: ac8aab7a1a2288345a1bcc87973fd3e2, type: 3}
+  toSpawn:
+  - {fileID: 8204577076477030331, guid: ba846102bcd3552489865dadb6893157, type: 3}
+  - {fileID: 4790896554516300058, guid: 0915bc5221bf8fb48bc8b8beca011354, type: 3}
   spawnValues: {x: 0, y: 0, z: 0}
   hazardCount: 1
   spawnWait: 2
   startWait: 2
   waveWait: 3
+  arrayLength: 0

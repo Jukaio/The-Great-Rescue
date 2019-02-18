@@ -61,7 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8396625559933544118}
-  - {fileID: 4587027647602648849}
+  - {fileID: 5539182847167633764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   shot: {fileID: 6522818139512387649, guid: 52c606b3736558b4ca42c5877133ddb8, type: 3}
   shotSpawn: {fileID: 8396625559933544118}
   fireRate: 5
---- !u!1 &7700003935251821648
+--- !u!1 &5393251394868247968
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,36 +118,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4587027647602648849}
-  - component: {fileID: 1434474244548053344}
+  - component: {fileID: 5539182847167633764}
+  - component: {fileID: 1181802632968112618}
   m_Layer: 0
-  m_Name: NormalGingerBread_Idle1
+  m_Name: goblin sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4587027647602648849
+--- !u!4 &5539182847167633764
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7700003935251821648}
+  m_GameObject: {fileID: 5393251394868247968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8584646189345475796}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1434474244548053344
+--- !u!212 &1181802632968112618
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7700003935251821648}
+  m_GameObject: {fileID: 5393251394868247968}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -178,12 +178,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b7536afc963bda4d9b6f078e662f87b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24f6e489fd4d7f04da0016d05f548751, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2.1}
+  m_Size: {x: 3.6347826, y: 3.4130435}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

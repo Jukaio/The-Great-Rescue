@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 {
     public float healthPoints;
-
+    public Animator animator; 
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("space") && Time.time > nextFire)
         {
+            //animator.SetBool("isShooting", true);
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
 
@@ -104,7 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             healthPoints = ApplyDamage(healthPoints, 1);
             Destroy(collision.gameObject);
-            HealthBarScript.health -= 5;
+            HealthBarScript.health -= 10;
         }
 
         else if (collision.gameObject.tag == "Heal")
