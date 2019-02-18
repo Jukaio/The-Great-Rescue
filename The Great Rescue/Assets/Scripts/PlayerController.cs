@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
     public Transform shotSpawn;
     public float fireRate;
     private float nextFire;
-
+    private bool waitActive;
+    private bool canShoot = true;
     public bool damageBuff = false;
     public float damageBuffDuration;
     public float damageMultiplier;
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKey("space") && Time.time > nextFire)
+        if (Input.GetKey("space") && Time.time > nextFire && canShoot)
         {
             //animator.SetBool("isShooting", true);
             nextFire = Time.time + fireRate;
@@ -103,9 +104,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            healthPoints = ApplyDamage(healthPoints, 1);
-            Destroy(collision.gameObject);
-            HealthBarScript.health -= 10;
+            if (!waitActive)
+            {
+                healthPoints = ApplyDamage(healthPoints, 1);
+                Destroy(collision.gameObject);
+                HealthBarScript.health -= 10;
+                animator.SetBool("isHurt", true); // play the animation of getting hurt
+                StartCoroutine(Wait());
+            }
         }
 
         else if (collision.gameObject.tag == "Heal")
@@ -113,6 +119,7 @@ public class PlayerController : MonoBehaviour
             healthPoints = ApplyDamage(healthPoints, -1);
             Destroy(collision.gameObject);
             HealthBarScript.health += 1;
+            
         }
 
     //buffs/powerups
@@ -124,6 +131,16 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+    }
+    //method for avoiding damage and not being able to shoot while hurt
+    IEnumerator Wait()
+    {
+        waitActive = true;
+        canShoot = false;
+        yield return new WaitForSeconds(0.6f);
+        animator.SetBool("isHurt", false); // stop the animation of getting hurt
+        canShoot = true;
+        waitActive = false;
     }
 
     float ApplyDamage(float health, float damage)

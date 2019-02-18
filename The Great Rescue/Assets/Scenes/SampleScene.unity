@@ -1296,6 +1296,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 313774728}
+    - target: {fileID: 1229229466987829987, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
+        type: 3}
+      propertyPath: healthPoints
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 1229229466691395670, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: m_LocalPosition.y
