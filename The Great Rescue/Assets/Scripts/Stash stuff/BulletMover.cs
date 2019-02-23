@@ -13,9 +13,9 @@ public class BulletMover : MonoBehaviour
     void Start()
     {
         bulletMovement = gameObject.AddComponent<Movement>();
-        if (GameObject.Find("Player").GetComponent<PlayerController>().damageBuff == true)
+        if (GameObject.Find("Player").GetComponent<playerStatus>().damageBuff == true)
         {
-            damage *= GameObject.Find("Player").GetComponent<PlayerController>().damageMultiplier;
+            damage *= GameObject.Find("Player").GetComponent<playerStatus>().damageMultiplier;
         }
 
     }

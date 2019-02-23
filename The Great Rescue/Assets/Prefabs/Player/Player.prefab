@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229229466987829997}
   - component: {fileID: 1229229466987829987}
+  - component: {fileID: 6447427718167526260}
   - component: {fileID: 1229229466987829986}
   m_Layer: 0
   m_Name: Player
@@ -76,13 +77,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 10
-  ifRigidbody: 1
-  acceleration: 0
-  speed: 2
+  animator: {fileID: 0}
   shot: {fileID: 6522818139512387649, guid: d9faf4d0f988b47419e7f0fa53795abe, type: 3}
   shotSpawn: {fileID: 1229229466691395670}
   fireRate: 2
-  damage: 2
+  damageBuff: 0
+  damageBuffDuration: 0
+  damageMultiplier: 0
+  distanceToMove: 0
+  moveSpeed: 0
+--- !u!114 &6447427718167526260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229229466987829984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40761b8f865b29649a92d800ad55d607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1229229466987829986
 BoxCollider2D:
   m_ObjectHideFlags: 0
