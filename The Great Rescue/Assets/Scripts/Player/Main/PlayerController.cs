@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (GetComponent<MeleeAttack>().IsEnemyInMelee() == false)
         {
-            Destroy(gameObject);
+            Debug.Log("LOLOLOLOLO XD OLOLOLOL");
         }
     }
 
