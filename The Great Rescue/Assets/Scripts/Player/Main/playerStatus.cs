@@ -34,7 +34,8 @@ public class playerStatus : MonoBehaviour
     //Damage methods and heal
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "EnemyBullet"
+            || collision.gameObject.tag == "Enemy")
         {
             if (!waitActive)
             {

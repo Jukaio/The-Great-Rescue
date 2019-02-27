@@ -316,8 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c580d221fed994242bfacadb9383217f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  check: 0
+  isInMeleeRange: 0
   enemies: []
+  range: 33
   theCheck: 0
 --- !u!212 &313774727
 SpriteRenderer:
@@ -1745,17 +1746,27 @@ PrefabInstance:
     - target: {fileID: 1229229466987829986, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.565
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1229229466987829986, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.53
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1229229466987829986, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229229466987829986, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229229466987829986, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6447427718167526260, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}

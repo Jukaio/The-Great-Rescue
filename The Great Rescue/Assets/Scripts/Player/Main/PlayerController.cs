@@ -65,12 +65,21 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKey("space") && Time.time > nextFire && GetComponent<playerStatus>().getCanShoot())
+        if (GetComponent<MeleeAttack>().IsEnemyInMelee())
         {
-            //animator.SetBool("isShooting", true);
+            if (Input.GetKey("space")
+            && Time.time > nextFire
+            && GetComponent<playerStatus>().getCanShoot())
+            {
+                //animator.SetBool("isShooting", true);
 
-            nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                nextFire = Time.time + fireRate;
+                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            }
+        }
+        else if (GetComponent<MeleeAttack>().IsEnemyInMelee() == false)
+        {
+            Destroy(gameObject);
         }
     }
 
