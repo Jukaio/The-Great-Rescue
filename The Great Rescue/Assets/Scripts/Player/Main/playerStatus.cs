@@ -26,6 +26,7 @@ public class playerStatus : MonoBehaviour
             damageMultiplier = 0;
             damageBuff = false;
             damageBuffDuration = 0;
+            
         }
 
     }

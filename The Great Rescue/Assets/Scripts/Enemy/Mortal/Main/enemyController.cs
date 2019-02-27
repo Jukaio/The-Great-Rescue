@@ -5,19 +5,16 @@ using UnityEngine;
 public class enemyController : MonoBehaviour
 {
     public float speed;
-    private Movement stoneMovement;
 
-
-    void Start()
-    {
-        stoneMovement = gameObject.AddComponent<Movement>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        stoneMovement.moveLeft(speed);
-  
+        Vector2 movement = new Vector2(-1f, 0);
+        transform.Translate(Time.deltaTime * speed * movement);
+
+        if (gameObject.transform.position.x <= -11)
+            Destroy(gameObject);
     }
 
 }

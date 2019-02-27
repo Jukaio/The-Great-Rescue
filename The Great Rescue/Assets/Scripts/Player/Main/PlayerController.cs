@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     private float nextFire;
 
-
-
     [SerializeField] private float distanceToMove;
     [SerializeField] private float moveSpeed;
     private bool moveToPoint = false;
@@ -36,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
         endPosition = transform.position;
     }
 
@@ -66,16 +65,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
         if (Input.GetKey("space") && Time.time > nextFire && GetComponent<playerStatus>().getCanShoot())
         {
             //animator.SetBool("isShooting", true);
+
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-
         }
-
-    }  
+    }
 
 }
 

@@ -14,6 +14,7 @@ public class enemyStatus : MonoBehaviour
             Destroy(gameObject);
         if (gameObject.transform.position.x <= -11)
             Destroy(gameObject);
+
     }
 
     //Damage methods
@@ -27,4 +28,5 @@ public class enemyStatus : MonoBehaviour
     {
         return health - damage;
     }
+
 }

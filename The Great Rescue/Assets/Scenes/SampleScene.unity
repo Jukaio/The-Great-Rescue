@@ -304,6 +304,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1229229465950568917}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &313774725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313774724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c580d221fed994242bfacadb9383217f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  check: 0
+  enemies: []
+  theCheck: 0
 --- !u!212 &313774727
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1717,6 +1732,11 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 1229229466987829987, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
+        type: 3}
+      propertyPath: checkAreaInFront
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1229229466691395670, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1740,12 +1760,17 @@ PrefabInstance:
     - target: {fileID: 6447427718167526260, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: healthPoints
-      value: 10
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 6447427718167526260, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
         type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 313774728}
+    - target: {fileID: 1229229466691395671, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a4f024d9353bd04b8a5b6ce6e5a352a, type: 3}
