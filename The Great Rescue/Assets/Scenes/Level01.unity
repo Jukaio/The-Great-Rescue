@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 230391892}
   - component: {fileID: 230391891}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: HealPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 701635660}
   - component: {fileID: 701635659}
   m_Layer: 5
-  m_Name: Image
+  m_Name: SwordPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1821,7 +1821,7 @@ PrefabInstance:
     - target: {fileID: 6640320280087106022, guid: 0ac5dccbbcceb184c8b66620b3f73432,
         type: 3}
       propertyPath: duration
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6640320280087106022, guid: 0ac5dccbbcceb184c8b66620b3f73432,
         type: 3}
