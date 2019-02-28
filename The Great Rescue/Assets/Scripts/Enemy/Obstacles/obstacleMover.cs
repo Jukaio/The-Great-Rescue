@@ -13,4 +13,9 @@ public class obstacleMover : MonoBehaviour
         transform.Translate(Time.deltaTime * speed * movement);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            Destroy(gameObject);
+    }
 }

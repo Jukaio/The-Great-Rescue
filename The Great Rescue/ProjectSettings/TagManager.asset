@@ -10,6 +10,7 @@ TagManager:
   - Heal
   - BuffDamage
   - checkAreaInFrontOfPlayer
+  - PlayerSword
   layers:
   - Default
   - TransparentFX

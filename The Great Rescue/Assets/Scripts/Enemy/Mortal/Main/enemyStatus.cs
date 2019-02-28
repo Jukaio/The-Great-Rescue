@@ -22,6 +22,12 @@ public class enemyStatus : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
             healthPoints = ApplyDamage(healthPoints, collision.GetComponent<BulletMoverPlayer>().damage);
+
+        else if (collision.gameObject.tag == "PlayerSword")
+        {
+            Debug.Log("Shot hit!");
+            healthPoints = ApplyDamage(healthPoints, collision.GetComponent<SwordAttack>().damage);
+        }
     }
 
     float ApplyDamage(float health, float damage)

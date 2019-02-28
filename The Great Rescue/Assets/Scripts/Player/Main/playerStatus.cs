@@ -13,6 +13,7 @@ public class playerStatus : MonoBehaviour
     public float damageBuffDuration;
     public float damageMultiplier;
 
+
     void Update()
     {
         //Death check
@@ -54,7 +55,7 @@ public class playerStatus : MonoBehaviour
         waitActive = true;
         canShoot = false;
         yield return new WaitForSeconds(0.6f);
-        animator.SetBool("isHurt", false); // stop the animation of getting hurt
+        animator.SetBool("isHurt", false); // stop the animation if getting hurt
         canShoot = true;
         waitActive = false;
     }
