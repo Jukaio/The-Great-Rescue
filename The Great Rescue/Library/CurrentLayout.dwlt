@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 498}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 448}
   m_MaxSize: {x: 22012, y: 10024}
   vertical: 0
-  controlID: 5980
+  controlID: 139
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 5898
+  controlID: 108
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 846
     height: 486
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 486
     width: 846
     height: 461
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -213,8 +213,8 @@ MonoBehaviour:
     y: 0
     width: 220
     height: 947
-  m_MinSize: {x: 204, y: 224}
-  m_MaxSize: {x: 4004, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -331,18 +331,18 @@ MonoBehaviour:
       y: 17
       width: 844
       height: 424
-    m_Scale: {x: 1.1940521, y: 1.1940521}
-    m_Translation: {x: 432.2296, y: 244.3529}
+    m_Scale: {x: 2.3502073, y: 2.3502066}
+    m_Translation: {x: 572.073, y: 72.26952}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -361.98557
-      y: -204.64174
-      width: 706.83685
-      height: 355.09338
+      x: -243.41385
+      y: -30.750286
+      width: 359.11725
+      height: 180.40967
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
@@ -384,9 +384,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.079771, y: 0.6532837, z: 0.13859445}
+    m_Target: {x: -2.700183, y: -1.3972611, z: 4.7594013}
     speed: 2
-    m_Value: {x: -5.079771, y: 0.6532837, z: 0.13859445}
+    m_Value: {x: -2.700183, y: -1.3972611, z: 4.7594013}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -418,9 +418,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.145071
+    m_Target: 1.6472962
     speed: 2
-    m_Value: 8.145071
+    m_Value: 1.6472962
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -461,23 +461,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d2fbffff
-      m_LastClickedID: -1070
-      m_ExpandedIDs: ec33ffff0634ffffd838ffff0839ffff463affff5c3affff763affff5c42ffff8c42fffff049ffff084efffffe62ffff2466ffff2866ffff3284ffff4a84ffff288affffa28dffff5894ffff8494ffffd8b1fffff0b1ffff70b2ffff9cb2ffff62bfffff72caffff8acaffff4acbffff62cbffff32d8ffffced9ffff38dbffff92dcffff96ddffffdcdfffffc8f8ffffaefbffffc8fbffffd2fbffffd4fbffff
+      m_SelectedIDs: 84a1ffff
+      m_LastClickedID: -24188
+      m_ExpandedIDs: dea5ffffbefbffffd2fbffffd4fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Sword (1)
-        m_OriginalName: Sword (1)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -37396
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -525,20 +525,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/Player/Main
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/Player/Main
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\The-Great-Rescue\The Great Rescue
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ce0a0000
-    m_LastClickedID: 2766
-    m_ExpandedIDs: 000000009c090000c2090000c4090000e6090000ce0a00004c0b00008c0b0000a40b0000bc0b0000ec0b00004c0c000000ca9a3b
+    m_SelectedIDs: 480b0000
+    m_LastClickedID: 2888
+    m_ExpandedIDs: 00000000a2090000c8090000ca090000ec090000d40a0000520b0000920b0000aa0b0000c20b0000f20b0000520c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,7 +566,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009c090000c2090000c4090000e6090000ce0a00004c0b00008c0b0000a40b0000bc0b0000ec0b00004c0c000000ca9a3b
+    m_ExpandedIDs: 00000000a2090000c8090000ca090000ec090000d40a0000520b0000920b0000aa0b0000c20b0000f20b0000520c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

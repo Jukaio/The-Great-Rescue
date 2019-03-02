@@ -23,40 +23,60 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     private float nextFire;
 
-    [SerializeField] private float distanceToMove;
-    [SerializeField] private float moveSpeed;
-    private bool moveToPoint = false;
-    private Vector3 endPosition;
+
+
 
     public GameObject meleeWeapon;
     public bool isInMeleeAttack = false;
     public bool goesOutOfMeleeAttack = false;
 
     public float meleeAttackRange;
-
     public float meleeAttackCooldown;
     public float meleeAttackCooldownHolder;
     public float climaxAnimationSword;
     public float climaxAnimationSwordHolder;
     public bool isSwordInClimax;
+    [Tooltip("The magnitude of the highest line added to the magnitude of the lowest line. Their sum devided by four. The quotient is the move distance")]
+    public float moveDistance;
+    private Vector3 travelVector;
+    private float originY;
+    public float moveSpeed;
 
 
     void Start()
     {
-
-        endPosition = transform.position;
+        originY = transform.position.y;
         meleeAttackCooldownHolder = meleeAttackCooldown;
         climaxAnimationSwordHolder = climaxAnimationSword;
+        originY = transform.position.y;
     }
 
     void FixedUpdate()
     {
-        if (moveToPoint) //Movement
+        //Line Movement
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.position = Vector3.MoveTowards(transform.position, endPosition, moveSpeed * Time.deltaTime);
+            travelVector = new Vector3(transform.position.x, originY + (moveDistance * 2), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
         }
 
-        if (!isInMeleeAttack && !goesOutOfMeleeAttack) //Attacks
+        else if (Input.GetKey(KeyCode.S))
+        {
+            travelVector = new Vector3(transform.position.x, originY - (moveDistance * 2), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+        }
+
+        if (Input.GetKey(KeyCode.S) == false && Input.GetKey(KeyCode.W) == false)
+        {
+            AdjustPosition();
+        }
+
+
+
+
+
+        //Attacks
+            if (!isInMeleeAttack && !goesOutOfMeleeAttack) //Attacks
         {
             if (GetComponent<MeleeAttack>().IsEnemyInMelee())
             {
@@ -127,22 +147,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (endPosition.y <= 3f)
-        {
-            if (Input.GetKeyDown(KeyCode.W)) //Up
-            {
-                endPosition = new Vector3(endPosition.x, endPosition.y + distanceToMove, endPosition.z);
-                moveToPoint = true;
-            }
-        }
-        if (endPosition.y >= -2f)
-        {
-            if (Input.GetKeyDown(KeyCode.S)) //Down
-            {
-                endPosition = new Vector3(endPosition.x, endPosition.y - distanceToMove, endPosition.z);
-                moveToPoint = true;
-            }
-        }
+        
+
 
     }
 
@@ -151,6 +157,42 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
+    private void AdjustPosition()
+    {
+        if (transform.position.y >= originY + ((moveDistance * 2) - (moveDistance / 2)) &&
+            transform.position.y != originY + (moveDistance * 2))
+        {
+            travelVector = new Vector3(transform.position.x, originY + (moveDistance * 2), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+        }
+        else if (transform.position.y >= originY + ((moveDistance) - (moveDistance / 2)) &&
+                transform.position.y < originY + ((moveDistance * 2) - (moveDistance / 2)) &&
+                transform.position.y != originY + moveDistance)
+        {
+            travelVector = new Vector3(transform.position.x, originY + (moveDistance), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+        }
+        else if (transform.position.y < originY + (moveDistance / 2) &&
+                   transform.position.y >= originY - (moveDistance / 2) &&
+                   transform.position.y != originY)
+        {
+            travelVector = new Vector3(transform.position.x, originY, transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+        }
+        else if (transform.position.y < originY - ((moveDistance) - (moveDistance / 2)) &&
+                transform.position.y >= originY - ((moveDistance * 2) - (moveDistance / 2)) &&
+                transform.position.y != originY - moveDistance)
+        {
+            travelVector = new Vector3(transform.position.x, originY - (moveDistance), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+        }
+        else if (transform.position.y < originY - ((moveDistance * 2) - (moveDistance / 2)) &&
+            transform.position.y != originY - (moveDistance * 2))
+        {
+            travelVector = new Vector3(transform.position.x, originY - (moveDistance * 2), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+        }
+    }
 
 }
 
