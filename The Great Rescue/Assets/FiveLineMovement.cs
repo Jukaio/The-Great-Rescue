@@ -9,6 +9,10 @@ public class FiveLineMovement : MonoBehaviour
     public float originY;
     public float moveSpeed;
 
+    public float amountOfLines;
+    private float highestLineIndex;
+    private float lowestLineIndex;
+
     void Start()
     {
         originY = transform.position.y;
@@ -18,13 +22,13 @@ public class FiveLineMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W)) //Move uo
         {
             travelVector = new Vector3(transform.position.x, originY + (distance * 2), transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
         }
 
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S)) //Move down
         {
             travelVector = new Vector3(transform.position.x, originY - (distance * 2), transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
@@ -36,7 +40,7 @@ public class FiveLineMovement : MonoBehaviour
         }
     }
 
-    private void adjustPosition()
+    private void adjustPosition() //Check tiles
     {
         if (transform.position.y >= originY + ((distance * 2) - (distance / 2)) &&
             transform.position.y != originY + (distance * 2))
@@ -71,5 +75,20 @@ public class FiveLineMovement : MonoBehaviour
             travelVector = new Vector3(transform.position.x, originY - (distance * 2), transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
         }
+
+        
     }
+    private void AdjustPosition() //Method for adjusting the player position
+        {
+            for (float i = distance * highestLineIndex; i >= distance * lowestLineIndex; i -= distance)
+            {
+                if ((transform.position.y >= originY + (i - (distance / 2)) &&
+                    transform.position.y < originY + (i + (distance / 2)) &&
+                    transform.position.y != originY + i))
+                {
+                    travelVector = new Vector3(transform.position.x, originY + i, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+                }
+            }
+        }
 }

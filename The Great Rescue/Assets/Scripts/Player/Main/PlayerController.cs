@@ -38,10 +38,17 @@ public class PlayerController : MonoBehaviour
     public bool isSwordInClimax;
     [Tooltip("The magnitude of the highest line added to the magnitude of the lowest line. Their sum devided by four. The quotient is the move distance")]
     public float moveDistance;
+
+    public float amountOfLines;
+    private float highestLineIndex;
+    private float lowestLineIndex;
+
     private Vector3 travelVector;
     private float originY;
     public float moveSpeed;
 
+    Vector3 oldPos;
+    public float direction;
 
     void Start()
     {
@@ -49,34 +56,22 @@ public class PlayerController : MonoBehaviour
         meleeAttackCooldownHolder = meleeAttackCooldown;
         climaxAnimationSwordHolder = climaxAnimationSword;
         originY = transform.position.y;
+
+        highestLineIndex = (amountOfLines - 1) / 2;
+        lowestLineIndex = highestLineIndex - (amountOfLines - 1);
+
+        if (amountOfLines % 2 == 0) //Check if odd or even -> If even adjust Index
+        {
+            highestLineIndex = (float)Math.Floor(highestLineIndex);
+            lowestLineIndex = (float)Math.Floor(lowestLineIndex);
+        }
+
     }
 
     void FixedUpdate()
     {
-        //Line Movement
-        if (Input.GetKey(KeyCode.W))
-        {
-            travelVector = new Vector3(transform.position.x, originY + (moveDistance * 2), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-        }
-
-        else if (Input.GetKey(KeyCode.S))
-        {
-            travelVector = new Vector3(transform.position.x, originY - (moveDistance * 2), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-        }
-
-        if (Input.GetKey(KeyCode.S) == false && Input.GetKey(KeyCode.W) == false)
-        {
-            AdjustPosition();
-        }
-
-
-
-
-
         //Attacks
-            if (!isInMeleeAttack && !goesOutOfMeleeAttack) //Attacks
+        if (!isInMeleeAttack && !goesOutOfMeleeAttack) //Attacks
         {
             if (GetComponent<MeleeAttack>().IsEnemyInMelee())
             {
@@ -102,12 +97,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        else if(isInMeleeAttack && !goesOutOfMeleeAttack)
+        else if (isInMeleeAttack && !goesOutOfMeleeAttack)
         {
-            meleeWeapon.transform.localScale = new Vector3(meleeWeapon.transform.localScale. x + (10f * Time.deltaTime), 1f, 1f);
+            meleeWeapon.transform.localScale = new Vector3(meleeWeapon.transform.localScale.x + (10f * Time.deltaTime), 1f, 1f);
         }
 
-        else if(goesOutOfMeleeAttack && isInMeleeAttack && !isSwordInClimax)
+        else if (goesOutOfMeleeAttack && isInMeleeAttack && !isSwordInClimax)
         {
             meleeWeapon.transform.localScale = new Vector3(meleeWeapon.transform.localScale.x - (10f * Time.deltaTime), 1f, 1f);
 
@@ -121,10 +116,10 @@ public class PlayerController : MonoBehaviour
 
             climaxAnimationSwordHolder = climaxAnimationSword;
             goesOutOfMeleeAttack = true;
-            
+
         }
 
-        else if(meleeWeapon.transform.localScale.x <= 0)
+        else if (meleeWeapon.transform.localScale.x <= 0)
         {
             isInMeleeAttack = false;
             goesOutOfMeleeAttack = false;
@@ -142,57 +137,65 @@ public class PlayerController : MonoBehaviour
 
         if (climaxAnimationSwordHolder <= 0)
             climaxAnimationSwordHolder = 0;
-        
+
     }
 
     void Update()
     {
-        
+        //Line Movement
+        if (Input.GetKey(KeyCode.W))
+        {
+            oldPos = transform.position;
+            travelVector = new Vector3(transform.position.x, originY + (moveDistance * highestLineIndex), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+            direction = transform.position.y - oldPos.y;
+        }
 
+        else if (Input.GetKey(KeyCode.S))
+        {
+            oldPos = transform.position;
+            travelVector = new Vector3(transform.position.x, originY + (moveDistance * lowestLineIndex), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+            direction = transform.position.y - oldPos.y;
+        }
 
+        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false)
+        {
+            AdjustPosition();
+        }
     }
+
 
     IEnumerator wait() //method for animation etc during sword
     {
         yield return new WaitForSeconds(0.5f);
     }
 
-    private void AdjustPosition()
+    private void AdjustPosition() //Method for adjusting the player position
     {
-        if (transform.position.y >= originY + ((moveDistance * 2) - (moveDistance / 2)) &&
-            transform.position.y != originY + (moveDistance * 2))
+        for (float i = moveDistance * highestLineIndex; i >= moveDistance * lowestLineIndex; i -= moveDistance)
         {
-            travelVector = new Vector3(transform.position.x, originY + (moveDistance * 2), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-        }
-        else if (transform.position.y >= originY + ((moveDistance) - (moveDistance / 2)) &&
-                transform.position.y < originY + ((moveDistance * 2) - (moveDistance / 2)) &&
-                transform.position.y != originY + moveDistance)
-        {
-            travelVector = new Vector3(transform.position.x, originY + (moveDistance), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-        }
-        else if (transform.position.y < originY + (moveDistance / 2) &&
-                   transform.position.y >= originY - (moveDistance / 2) &&
-                   transform.position.y != originY)
-        {
-            travelVector = new Vector3(transform.position.x, originY, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-        }
-        else if (transform.position.y < originY - ((moveDistance) - (moveDistance / 2)) &&
-                transform.position.y >= originY - ((moveDistance * 2) - (moveDistance / 2)) &&
-                transform.position.y != originY - moveDistance)
-        {
-            travelVector = new Vector3(transform.position.x, originY - (moveDistance), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-        }
-        else if (transform.position.y < originY - ((moveDistance * 2) - (moveDistance / 2)) &&
-            transform.position.y != originY - (moveDistance * 2))
-        {
-            travelVector = new Vector3(transform.position.x, originY - (moveDistance * 2), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+            if (direction > 0)
+            {
+                if ((transform.position.y > originY + i &&
+                    transform.position.y < originY + i + moveDistance &&
+                    transform.position.y != originY + i))
+                {
+                    travelVector = new Vector3(transform.position.x, originY + i + moveDistance, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+                }
+            }
+            else if (direction < 0)
+            {
+                if ((transform.position.y < originY + i &&
+                    transform.position.y > originY + i - moveDistance &&
+                    transform.position.y != originY + i))
+                {
+                    travelVector = new Vector3(transform.position.x, originY + i - moveDistance, transform.position.z);
+                    transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
+                    Debug.Log("In the deepest");
+                }
+            }
         }
     }
-
 }
-
