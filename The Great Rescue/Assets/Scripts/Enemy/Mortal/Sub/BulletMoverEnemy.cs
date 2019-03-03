@@ -21,10 +21,9 @@ public class BulletMoverEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (tag == "PlayerBullet")
+        if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.tag == "Enemy" && collision.gameObject.layer != 8)
-                Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

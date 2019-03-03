@@ -165,12 +165,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-    IEnumerator wait() //method for animation etc during sword
-    {
-        yield return new WaitForSeconds(0.5f);
-    }
-
     private void AdjustPosition() //Method for adjusting the player position
     {
         for (float i = moveDistance * highestLineIndex; i >= moveDistance * lowestLineIndex; i -= moveDistance)
@@ -193,9 +187,13 @@ public class PlayerController : MonoBehaviour
                 {
                     travelVector = new Vector3(transform.position.x, originY + i - moveDistance, transform.position.z);
                     transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
-                    Debug.Log("In the deepest");
                 }
             }
         }
+    }
+
+    IEnumerator wait() //method for animation etc during sword
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 }
