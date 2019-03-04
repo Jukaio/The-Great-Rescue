@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d51e0b3ecdf014f929ad0a6a2c907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 50
+  healthPoints: 25
   powerUp: {fileID: 942288657698764845, guid: 0ac5dccbbcceb184c8b66620b3f73432, type: 3}
   bloodEffect: {fileID: 864936101217723908, guid: 60626a9e740c825419ba8987bb744b7e,
     type: 3}
