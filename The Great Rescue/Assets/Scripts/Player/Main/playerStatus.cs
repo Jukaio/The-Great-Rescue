@@ -18,7 +18,7 @@ public class playerStatus : MonoBehaviour
     {
         //Death check
         if (healthPoints <= 0)
-            Destroy(gameObject);
+            Destroy(GameObject.);
 
         //Buff data
         damageBuffDuration -= Time.deltaTime;
