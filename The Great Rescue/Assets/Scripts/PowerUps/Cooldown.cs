@@ -7,19 +7,38 @@ public class Cooldown : MonoBehaviour
 {
     public Image cooldown;
     public float waitTime = 10;
-    public bool coolingDown;
+    public static bool coolingDown;
+    bool filledBar;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(coolingDown == true)
+        
+        PowerUpActive();
+    }
+
+    public void PowerUpActive()
+    {
+        if (coolingDown == true)
         {
+            Debug.Log("REACHED");
+            cooldown.color = Color.green;
             cooldown.fillAmount -= 1.0f / waitTime * Time.deltaTime;
+            if(cooldown.fillAmount <= 0)
+            {
+                coolingDown = false;
+            }
+        }
+        else if(!coolingDown)
+        {
+                cooldown.fillAmount = 1.0f;
+                cooldown.color = Color.gray;
+            
         }
     }
-}
+   }
+

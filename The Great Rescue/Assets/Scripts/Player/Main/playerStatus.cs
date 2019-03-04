@@ -36,12 +36,16 @@ public class playerStatus : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "EnemyBullet"
-            || collision.gameObject.tag == "Enemy")
+            || collision.gameObject.tag == "Enemy"
+            || collision.gameObject.tag == "Obstacle")
         {
             if (!waitActive)
             {
                 healthPoints = ApplyDamage(healthPoints, 1);
-                Destroy(collision.gameObject);
+                if (collision.gameObject.tag != "Obstacle")
+                {
+                    Destroy(collision.gameObject);
+                }
                 HealthBarScript.health -= 10;
                 animator.SetBool("isHurt", true); // play the animation of getting hurt
                 StartCoroutine(Wait());

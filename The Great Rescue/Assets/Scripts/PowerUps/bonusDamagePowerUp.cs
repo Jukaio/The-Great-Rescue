@@ -24,6 +24,7 @@ public class bonusDamagePowerUp : MonoBehaviour
             collision.gameObject.GetComponent<playerStatus>().damageBuff = true;
             collision.gameObject.GetComponent<playerStatus>().damageBuffDuration = duration;
             collision.gameObject.GetComponent<playerStatus>().damageMultiplier = multiplier;
+            Cooldown.coolingDown = true;
             Destroy(gameObject);
         }
     }

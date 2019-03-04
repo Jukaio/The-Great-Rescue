@@ -5,23 +5,50 @@ using UnityEngine;
 public class enemyStatus : MonoBehaviour
 {
     public float healthPoints;
-
+    public GameObject powerUp;
+    public GameObject bloodEffect;
+    int rndNmbr;
+    bool dropped = false;
+    const float m_dropChance = 1f / 2f; // 50% chance, change to 1f / 10f for 10% chance etc.. .. .. . . .. . 
     // Update is called once per frame
     void Update()
     {
+        
         //Death check
         if (healthPoints <= 0)
-            Destroy(gameObject);
+        {
+            if (gameObject != null)
+            {
+                OnEnemyJustDied();
+                Destroy(gameObject);
+            }
+
+        }
         if (gameObject.transform.position.x <= -11)
             Destroy(gameObject);
-
     }
+
+    private void OnEnemyJustDied()
+    {
+        //drop power up
+        if (Random.Range(0f, 1f) <= m_dropChance)
+        {
+            Debug.Log("DROP GRATZ");
+            powerUp = (GameObject)Instantiate(powerUp, gameObject.transform.position, Quaternion.identity);
+        }
+    }
+
+    
 
     //Damage methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PlayerBullet")
+        {
             healthPoints = ApplyDamage(healthPoints, collision.GetComponent<BulletMoverPlayer>().damage);
+            Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        }
+            
 
         else if (collision.gameObject.tag == "PlayerSword")
         {

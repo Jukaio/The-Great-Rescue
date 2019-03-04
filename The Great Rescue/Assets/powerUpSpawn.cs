@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class powerUpSpawn : MonoBehaviour
 {
+    public GameObject powerUp;
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.GetComponent<enemyStatus>().healthPoints <= 0)
+        if (1 > 0)
         {
-            
+            // newEnemy = (GameObject)Instantiate(powerUp);
+
         }
+
     }
 }
