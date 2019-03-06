@@ -7,6 +7,7 @@ public class bonusDamagePowerUp : MonoBehaviour
     public float duration;
     public float multiplier;
     public float speed;
+    public GameObject sound;
 
 
 
@@ -21,6 +22,8 @@ public class bonusDamagePowerUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Instantiate(sound, gameObject.transform.position, Quaternion.identity);
+
             collision.gameObject.GetComponent<playerStatus>().damageBuff = true;
             collision.gameObject.GetComponent<playerStatus>().damageBuffDuration = duration;
             collision.gameObject.GetComponent<playerStatus>().damageMultiplier = multiplier;

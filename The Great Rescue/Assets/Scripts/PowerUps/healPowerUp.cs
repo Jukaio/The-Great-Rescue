@@ -6,7 +6,7 @@ public class healPowerUp : MonoBehaviour
 {
     public float speed;
     public float healAmount;
-
+    public GameObject sound;
 
     void Start()
     {
@@ -24,6 +24,8 @@ public class healPowerUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Instantiate(sound, gameObject.transform.position, Quaternion.identity);
+
             collision.gameObject.GetComponent<playerStatus>().healthPoints += healAmount;
             
             Destroy(gameObject);

@@ -141,6 +141,7 @@ MonoBehaviour:
   duration: 10
   multiplier: 2
   speed: 2
+  sound: {fileID: 8788582838152933922, guid: d9fd65a81adc7134a83512a7371e1d75, type: 3}
 --- !u!114 &9028542768241416320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,13 +149,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942288657698764845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e26adfa14e9965444b2f013fde64ce1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
   healAmount: 0
+  sound: {fileID: 5021387161401627128, guid: dc4b7323e7abd8e4aa8aa481c2a68639, type: 3}
 --- !u!61 &8856838473122151487
 BoxCollider2D:
   m_ObjectHideFlags: 0

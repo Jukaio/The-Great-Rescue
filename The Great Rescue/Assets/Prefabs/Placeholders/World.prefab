@@ -551,6 +551,8 @@ MonoBehaviour:
   shotSpawn: {fileID: 5040457648467444145}
   fireRate: 0.3
   meleeWeapon: {fileID: 957538033}
+  swordSound: {fileID: 6921018495041220468, guid: f7d6f2618b6f26a46aa5f4a4d9a91763,
+    type: 3}
   isInMeleeAttack: 0
   goesOutOfMeleeAttack: 0
   meleeAttackRange: 1
@@ -575,6 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40761b8f865b29649a92d800ad55d607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}
   animator: {fileID: 5040457649214928122}
   healthPoints: 10
   damageBuff: 0

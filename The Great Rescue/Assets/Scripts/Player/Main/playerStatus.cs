@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerStatus : MonoBehaviour
 {
+    public GameObject hitSound;
+    public GameObject deathSound;
     public Animator animator;
     public float healthPoints;
     private bool waitActive;
@@ -14,11 +16,17 @@ public class playerStatus : MonoBehaviour
     public float damageMultiplier;
 
 
+
     void Update()
     {
         //Death check
         if (healthPoints <= 0)
+        {
+            Instantiate(deathSound, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject.transform.parent.gameObject);
+        }
+            
+            
 
         //Buff data
         damageBuffDuration -= Time.deltaTime;
@@ -42,13 +50,17 @@ public class playerStatus : MonoBehaviour
             if (!waitActive)
             {
                 healthPoints = ApplyDamage(healthPoints, 1);
+
                 if (collision.gameObject.tag != "Obstacle")
                 {
                     Destroy(collision.gameObject);
                 }
                 HealthBarScript.health -= 10;
                 animator.SetBool("isHurt", true); // play the animation of getting hurt
+                Instantiate(hitSound, Vector3.zero, Quaternion.identity);
+
                 StartCoroutine(Wait());
+               
             }
         }
     }

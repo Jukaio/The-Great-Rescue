@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyStatus : MonoBehaviour
 {
+    public GameObject deathSound;
     public float healthPoints;
     public GameObject powerUp;
     public GameObject bloodEffect;
@@ -11,19 +12,24 @@ public class enemyStatus : MonoBehaviour
     bool dropped = false;
     const float m_dropChance = 1f / 2f; // 50% chance, change to 1f / 10f for 10% chance etc.. .. .. . . .. . 
     // Update is called once per frame
+
+
     void Update()
     {
         
         //Death check
         if (healthPoints <= 0)
         {
+
             if (gameObject != null)
             {
+                Instantiate(deathSound, gameObject.transform.position, Quaternion.identity);
                 OnEnemyJustDied();
                 Destroy(gameObject);
             }
 
         }
+
         if (gameObject.transform.position.x <= -11)
             Destroy(gameObject);
     }
@@ -36,6 +42,7 @@ public class enemyStatus : MonoBehaviour
             Debug.Log("DROP GRATZ");
             powerUp = (GameObject)Instantiate(powerUp, gameObject.transform.position, Quaternion.identity);
         }
+
     }
 
     

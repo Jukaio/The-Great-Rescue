@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
 
     public GameObject meleeWeapon;
+    public GameObject swordSound;
     public bool isInMeleeAttack = false;
     public bool goesOutOfMeleeAttack = false;
 
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
     public float amountOfLines;
     private float highestLineIndex;
     private float lowestLineIndex;
+
+  
 
     private Vector3 travelVector;
     private float originY;
@@ -59,6 +62,8 @@ public class PlayerController : MonoBehaviour
 
         highestLineIndex = (amountOfLines - 1) / 2;
         lowestLineIndex = highestLineIndex - (amountOfLines - 1);
+
+        
 
         if (amountOfLines % 2 == 0) //Check if odd or even -> If even adjust Index
         {
@@ -83,6 +88,9 @@ public class PlayerController : MonoBehaviour
 
                     nextFire = Time.time + fireRate;
                     Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+
+                    
+
                 }
             }
 
@@ -90,6 +98,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKey("space"))
                 {
+                    Instantiate(swordSound, gameObject.transform.position, Quaternion.identity);
                     meleeWeapon.transform.localScale = new Vector3(10f * Time.deltaTime, 1f, 1f); //frame time = 0.02 secs
                     isInMeleeAttack = true;
                     meleeAttackCooldownHolder = meleeAttackCooldown;

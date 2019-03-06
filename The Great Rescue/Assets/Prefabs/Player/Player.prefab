@@ -76,16 +76,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb7e37dc8966724eb0bb69451672aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 10
-  animator: {fileID: 0}
   shot: {fileID: 6522818139512387649, guid: d9faf4d0f988b47419e7f0fa53795abe, type: 3}
   shotSpawn: {fileID: 1229229466691395670}
   fireRate: 2
-  damageBuff: 0
-  damageBuffDuration: 0
-  damageMultiplier: 0
-  distanceToMove: 0
+  meleeWeapon: {fileID: 0}
+  isInMeleeAttack: 0
+  goesOutOfMeleeAttack: 0
+  meleeAttackRange: 0
+  meleeAttackCooldown: 0
+  meleeAttackCooldownHolder: 0
+  climaxAnimationSword: 0
+  climaxAnimationSwordHolder: 0
+  isSwordInClimax: 0
+  moveDistance: 0
+  amountOfLines: 0
   moveSpeed: 0
+  direction: 0
 --- !u!114 &6447427718167526260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +104,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40761b8f865b29649a92d800ad55d607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: {fileID: 6178299663104090660, guid: 88eb41ead4f1e1b469216622a873031b,
+    type: 3}
+  deathSound: {fileID: 3940282398999237623, guid: 7671663e98b7b7d459983dd176d3acf3,
+    type: 3}
+  animator: {fileID: 0}
+  healthPoints: 0
+  damageBuff: 0
+  damageBuffDuration: 0
+  damageMultiplier: 0
 --- !u!61 &1229229466987829986
 BoxCollider2D:
   m_ObjectHideFlags: 0
