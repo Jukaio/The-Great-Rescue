@@ -31,7 +31,7 @@ public class MeleeAttack : MonoBehaviour
         foreach(GameObject enemy in enemies)
         {
             if (Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
-                
+
             {
                 if (enemy.transform.position.x < EnemyCheckArea.transform.position.x + (range / 2)) //works woohoo
                 {

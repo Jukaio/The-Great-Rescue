@@ -14,6 +14,7 @@ public class enemyStatus : MonoBehaviour
     // Update is called once per frame
 
 
+
     void Update()
     {
         
@@ -53,6 +54,8 @@ public class enemyStatus : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             healthPoints = ApplyDamage(healthPoints, collision.GetComponent<BulletMoverPlayer>().damage);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStatus>().specialBar += 1;
+
             Instantiate(bloodEffect, transform.position, Quaternion.identity);
         }
             

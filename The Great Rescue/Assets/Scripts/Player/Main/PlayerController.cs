@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.Experimental.UIElements;
 using System;
 
 
@@ -23,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public float fireRate;
     private float nextFire;
 
-
+    playerStatus playerStatus;
 
 
     public GameObject meleeWeapon;
@@ -63,7 +62,9 @@ public class PlayerController : MonoBehaviour
         highestLineIndex = (amountOfLines - 1) / 2;
         lowestLineIndex = highestLineIndex - (amountOfLines - 1);
 
-        
+        playerStatus = GetComponent<playerStatus>();
+
+
 
         if (amountOfLines % 2 == 0) //Check if odd or even -> If even adjust Index
         {
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKey("space")
                 && Time.time > nextFire
-                && GetComponent<playerStatus>().getCanShoot())
+                && playerStatus.getCanShoot())
                 {
                     //animator.SetBool("isShooting", true);
 
@@ -172,6 +173,20 @@ public class PlayerController : MonoBehaviour
         {
             AdjustPosition();
         }
+
+        if (Input.GetKey(KeyCode.F) && playerStatus.specialBar >= (playerStatus.maxSpecialBar / 3))
+        {
+            playerStatus.specialBar -= (playerStatus.maxSpecialBar / 3);
+
+            foreach(GameObject enemy in GetComponent<MeleeAttack>().enemies)
+            {
+                if(Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
+                {
+                    enemy.GetComponent<enemyStatus>().healthPoints -= 50;
+                }
+            }
+
+        }
     }
 
     private void AdjustPosition() //Method for adjusting the player position
@@ -200,6 +215,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
 
     IEnumerator wait() //method for animation etc during sword
     {

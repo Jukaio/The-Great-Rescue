@@ -15,6 +15,8 @@ public class playerStatus : MonoBehaviour
     public float damageBuffDuration;
     public float damageMultiplier;
 
+    public float specialBar = 0;
+    public float maxSpecialBar;
 
 
     void Update()
@@ -36,6 +38,11 @@ public class playerStatus : MonoBehaviour
             damageBuff = false;
             damageBuffDuration = 0;
             
+        }
+
+        if(specialBar >= maxSpecialBar)
+        {
+            specialBar = maxSpecialBar;
         }
 
     }
