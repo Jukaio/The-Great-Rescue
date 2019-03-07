@@ -174,18 +174,43 @@ public class PlayerController : MonoBehaviour
             AdjustPosition();
         }
 
-        if (Input.GetKey(KeyCode.F) && playerStatus.specialBar >= (playerStatus.maxSpecialBar / 3))
+        if (Input.GetKey(KeyCode.F) && playerStatus.specialBar == playerStatus.maxSpecialBar)
         {
-            playerStatus.specialBar -= (playerStatus.maxSpecialBar / 3);
+            playerStatus.specialBar = 0;
 
             foreach(GameObject enemy in GetComponent<MeleeAttack>().enemies)
             {
-                if(Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
+                enemy.GetComponent<enemyStatus>().healthPoints -= 50;
+            }
+            Debug.Log("3");
+        }
+
+        else if (Input.GetKey(KeyCode.F) && playerStatus.specialBar >= (playerStatus.maxSpecialBar / 3) * 2)
+        {
+            playerStatus.specialBar = 0;
+
+            foreach (GameObject enemy in GetComponent<MeleeAttack>().enemies)
+            {
+                if (enemy.transform.position.x <= GetComponent<MeleeAttack>().range)
                 {
                     enemy.GetComponent<enemyStatus>().healthPoints -= 50;
                 }
             }
+            Debug.Log("2");
+        }
 
+        if (Input.GetKey(KeyCode.F) && playerStatus.specialBar >= (playerStatus.maxSpecialBar / 3))
+        {
+            playerStatus.specialBar = 0;
+
+            foreach (GameObject enemy in GetComponent<MeleeAttack>().enemies)
+            {
+                if (Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
+                {
+                    enemy.GetComponent<enemyStatus>().healthPoints -= 50;
+                }
+            }
+            Debug.Log("1");
         }
     }
 

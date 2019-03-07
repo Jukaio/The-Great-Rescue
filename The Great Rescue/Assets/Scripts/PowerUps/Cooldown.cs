@@ -25,7 +25,7 @@ public class Cooldown : MonoBehaviour
     {
         if (coolingDown == true)
         {
-            Debug.Log("REACHED");
+            
             cooldown.color = Color.green;
             cooldown.fillAmount -= 1.0f / waitTime * Time.deltaTime;
             if(cooldown.fillAmount <= 0)

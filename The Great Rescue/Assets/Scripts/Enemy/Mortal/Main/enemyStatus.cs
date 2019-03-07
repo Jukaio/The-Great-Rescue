@@ -9,7 +9,6 @@ public class enemyStatus : MonoBehaviour
     public GameObject powerUp;
     public GameObject bloodEffect;
     int rndNmbr;
-    bool dropped = false;
     const float m_dropChance = 1f / 2f; // 50% chance, change to 1f / 10f for 10% chance etc.. .. .. . . .. . 
     // Update is called once per frame
 
@@ -63,7 +62,7 @@ public class enemyStatus : MonoBehaviour
         else if (collision.gameObject.tag == "PlayerSword")
         {
             Debug.Log("Shot hit!");
-            healthPoints = ApplyDamage(healthPoints, collision.GetComponent<SwordAttack>().damage);
+            healthPoints = ApplyDamage(healthPoints, collision.GetComponent<swordAttack>().damage);
         }
     }
 

@@ -362,6 +362,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230391889}
   m_CullTransparentMesh: 0
+--- !u!1 &481214840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 957538033, guid: 33db4284c67d4104a8e3d7d00b052958,
+    type: 3}
+  m_PrefabInstance: {fileID: 5040457649442317938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &481214842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481214840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728f17f752ca00a4eb3ff3275c0e249c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 957538038, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
       propertyPath: damage
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928120, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
@@ -1227,6 +1246,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3940282398999237623, guid: 7671663e98b7b7d459983dd176d3acf3,
         type: 3}
+    - target: {fileID: 5040457649214928120, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: maxSpecialBar
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928116, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1254,5 +1278,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 957538035, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
+      propertyPath: m_Offset.y
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 957538038, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
