@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
             direction = transform.position.y - oldPos.y;
         }
 
-        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false)
+        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false && gameObject.transform.position.y <= moveDistance * highestLineIndex)
         {
             AdjustPosition();
         }

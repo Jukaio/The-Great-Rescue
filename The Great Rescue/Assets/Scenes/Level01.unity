@@ -1041,6 +1041,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock01
       objectReference: {fileID: 0}
+    - target: {fileID: 3345293688194234467, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2593378276033116226, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1215,7 +1220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962a6209874d0e94296888de6d56304f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects: []
+  obstacles: []
+  enemies: []
+  enemyBullets: []
+  playerBullets: []
 --- !u!1001 &1662498945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,6 +1235,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
@@ -1449,6 +1462,11 @@ PrefabInstance:
       propertyPath: maxSpecialBar
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928120, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: specialBar
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928116, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1479,6 +1497,16 @@ PrefabInstance:
     - target: {fileID: 957538035, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
       propertyPath: m_Offset.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233610161382109102, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.04
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 957538038, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
