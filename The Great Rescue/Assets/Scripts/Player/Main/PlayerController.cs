@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
 
 {
+    public GameObject GameSpawner;
+    public List<GameObject> enemies;
+
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
@@ -76,8 +79,16 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        enemies = GameSpawner.GetComponent<GameController>().enemies;
+
+        if (Input.GetKey("b"))
+            {
+                Destroy(enemies[1]);
+            }
+
+        
         //Attacks
-        if (!isInMeleeAttack && !goesOutOfMeleeAttack) //Attacks
+            if (!isInMeleeAttack && !goesOutOfMeleeAttack) //Attacks
         {
             if (GetComponent<MeleeAttack>().IsEnemyInMelee())
             {
@@ -178,9 +189,10 @@ public class PlayerController : MonoBehaviour
         {
             playerStatus.specialBar = 0;
 
-            foreach(GameObject enemy in GetComponent<MeleeAttack>().enemies)
+            foreach(GameObject enemy in enemies)
             {
-                enemy.GetComponent<enemyStatus>().healthPoints -= 50;
+                if(enemy.tag == "Enemy")
+                    enemy.GetComponent<enemyStatus>().healthPoints -= 50;
             }
             Debug.Log("3");
         }
@@ -189,9 +201,9 @@ public class PlayerController : MonoBehaviour
         {
             playerStatus.specialBar = 0;
 
-            foreach (GameObject enemy in GetComponent<MeleeAttack>().enemies)
+            foreach (GameObject enemy in enemies)
             {
-                if (enemy.transform.position.x <= GetComponent<MeleeAttack>().range)
+                if (enemy.tag == "Enemy" && enemy.transform.position.x <= GetComponent<MeleeAttack>().range)
                 {
                     enemy.GetComponent<enemyStatus>().healthPoints -= 50;
                 }
@@ -203,9 +215,9 @@ public class PlayerController : MonoBehaviour
         {
             playerStatus.specialBar = 0;
 
-            foreach (GameObject enemy in GetComponent<MeleeAttack>().enemies)
+            foreach (GameObject enemy in enemies)
             {
-                if (Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
+                if (enemy.tag == "Enemy" && Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
                 {
                     enemy.GetComponent<enemyStatus>().healthPoints -= 50;
                 }

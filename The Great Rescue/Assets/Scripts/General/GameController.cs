@@ -5,33 +5,76 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
         public GameObject[] toSpawn;
-        public Vector3 spawnValues;
-        public int hazardCount;
-        public float spawnWait;
+
         public float startWait;
         public float waveWait;
+        private float nextWave;
 
-        public int arrayLength;
 
-        void Start()
+    public List<GameObject> waves = new List<GameObject>();
+    public List<GameObject> enemies = new List<GameObject>();
+
+
+    void Start()
         {
             StartCoroutine(SpawnWaves());
-            arrayLength = toSpawn.Length;
         }
+
+    private void Update()
+    {
+        if(Time.time > nextWave)
+        {
+            nextWave = Time.time + waveWait;
+
+            Vector3 spawnPosition = gameObject.transform.position;
+            Quaternion spawnRotation = Quaternion.identity;
+
+            waves.Add(Instantiate(toSpawn[Random.Range(0, toSpawn.Length)], spawnPosition, spawnRotation));
+
+            for (int j = 0; j < waves[waves.Count - 1].transform.childCount; j++)
+            {
+                enemies.Add(waves[waves.Count - 1].transform.GetChild(j).gameObject);
+            }
+
+        }
+
+        for (int i = 0; i < waves.Count; i++)
+        {
+            if (waves[i].transform.childCount == 0)
+            {
+                waves.Remove(waves[i]);
+            }
+
+        }
+
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            if (enemies[i] == null)
+            {
+                enemies.Remove(enemies[i]);
+            }
+
+        }
+
+    }
+
 
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
-        while (true)
-        {
-            for (int i = 0; i < hazardCount; i++)
-            {
-                Vector3 spawnPosition = gameObject.transform.position;
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(toSpawn[Random.Range(0, arrayLength)], spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(spawnWait);
-            }
-            yield return new WaitForSeconds(waveWait);
-        }
+
+
+        //Vector3 spawnPosition = gameObject.transform.position;
+        //Quaternion spawnRotation = Quaternion.identity;
+
+        //waves.Add(Instantiate(toSpawn[Random.Range(0, toSpawn.Length)], spawnPosition, spawnRotation));
+
+        //for (int j = 0; j < waves[waves.Count - 1].transform.childCount; j++)
+        //{
+        //    enemies.Add(waves[waves.Count - 1].transform.GetChild(j).gameObject);
+        //}
+
+        yield return new WaitForSeconds(waveWait);
+        
     }
 }

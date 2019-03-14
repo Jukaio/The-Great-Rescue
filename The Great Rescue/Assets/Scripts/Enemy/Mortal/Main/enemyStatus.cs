@@ -24,7 +24,7 @@ public class enemyStatus : MonoBehaviour
             if (gameObject != null)
             {
                 Instantiate(deathSound, gameObject.transform.position, Quaternion.identity);
-                OnEnemyJustDied();
+                OnEnemyJustDied(); 
                 Destroy(gameObject);
             }
 

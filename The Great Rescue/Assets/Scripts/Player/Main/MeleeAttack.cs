@@ -6,7 +6,7 @@ public class MeleeAttack : MonoBehaviour
 {
     GameObject EnemyCheckArea;
     public bool isInMeleeRange;
-    public GameObject[] enemies;
+    public List<GameObject> enemies;
     public float range;
 
     public int theCheck;
@@ -24,7 +24,7 @@ public class MeleeAttack : MonoBehaviour
                                                         gameObject.transform.position.y, 
                                                         gameObject.transform.position.z);
 
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemies = gameObject.GetComponent<PlayerController>().enemies;
 
         theCheck = 0;
 
