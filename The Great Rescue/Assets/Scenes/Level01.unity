@@ -1627,7 +1627,7 @@ MonoBehaviour:
   bullets: []
   fireRate: 0.1
   reloadTime: 3
-  dashAttackCooldown: 8
+  dashAttackCooldown: 5
   dashAttackCooldownCounter: 0
   indexMode: 0
   isInDash: 0
@@ -1667,7 +1667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e63423183504be439e56b8848de721c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 0
+  MaxHP: 10
+  currentHP: 0
 --- !u!1001 &879021580
 PrefabInstance:
   m_ObjectHideFlags: 0

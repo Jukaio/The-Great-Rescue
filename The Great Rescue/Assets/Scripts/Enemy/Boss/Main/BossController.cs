@@ -6,6 +6,7 @@ public class BossController : MonoBehaviour
 {
 
     public PlayerController Player;
+
     public float moveSpeed;
     private float originalMoveSpeed;
 
@@ -31,7 +32,6 @@ public class BossController : MonoBehaviour
     {
         Player = Player.GetComponent<PlayerController>();
         originalMoveSpeed = moveSpeed;
-
 
 
         StartCoroutine(Shoot());
@@ -82,20 +82,28 @@ public class BossController : MonoBehaviour
             for (int i = 0; i < transform.childCount; i++)
                 bullets.Add(gameObject.transform.GetChild(i).gameObject);
 
-            switch (indexMode)
+
+            if(GetComponent<BossStatus>().currentHP > (GetComponent<BossStatus>().MaxHP / 3) * 2)
             {
-                case 0:
-                    indexCount = bullets.Count - 7;
-                    break;
-                case 1:
-                    indexCount = bullets.Count - 6;
-                    break;
-                case 2:
-                    indexCount = bullets.Count - 5;
-                    moveSpeed = originalMoveSpeed * 2;
-                    break;
+                indexMode = 0;
+                indexCount = bullets.Count - 7;
+                dashAttackCooldown = 8;
+            }
+            else if(GetComponent<BossStatus>().currentHP > GetComponent<BossStatus>().MaxHP / 3)
+            {
+                indexMode = 1;
+                indexCount = bullets.Count - 6;
+                dashAttackCooldown = 6;
+            }
+            else
+            {
+                indexMode = 2;
+                indexCount = bullets.Count - 5;
+                moveSpeed = originalMoveSpeed * 2;
+                dashAttackCooldown = 4;
             }
 
+            
             if (!isInDash)
             {
                 for (int i = 0; i < indexCount; i++)
@@ -116,7 +124,6 @@ public class BossController : MonoBehaviour
         while (true)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerPositionOld, Time.deltaTime * moveSpeed * 2);
-            Debug.Log("Dash");
             if (gameObject.transform.position == playerPositionOld)
             {
                 while (true)
@@ -124,7 +131,6 @@ public class BossController : MonoBehaviour
                     gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector2(oldBossX, playerPositionOld.y), Time.deltaTime * moveSpeed);
                     if (gameObject.transform.position.x == oldBossX)
                     {
-                        Debug.Log("Dash");
                         dashAttackCooldownCounter = dashAttackCooldown;
                         isInDash = false;
                         yield break;

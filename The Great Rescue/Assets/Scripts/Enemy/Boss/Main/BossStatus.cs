@@ -5,10 +5,11 @@ using UnityEngine;
 public class BossStatus : MonoBehaviour
 {
     public float MaxHP;
-
-    void Start()
+    public float currentHP; /*{ get; private set; }*/
+    
+    void Awake()
     {
-        
+        currentHP = MaxHP;
     }
 
     // Update is called once per frame
