@@ -59,10 +59,11 @@ public class playerStatus : MonoBehaviour
             {
                 healthPoints = ApplyDamage(healthPoints, 1);
 
-                if (collision.gameObject.tag != "Obstacle")
+                if (collision.gameObject.tag != "Obstacle" && collision.gameObject.tag != "BossBullet")
                 {
                     Destroy(collision.gameObject);
                 }
+
                 HealthBarScript.health -= 10;
                 animator.SetBool("isHurt", true); // play the animation of getting hurt
                 Instantiate(hitSound, Vector3.zero, Quaternion.identity);

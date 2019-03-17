@@ -253,7 +253,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public float returnHighestLine()
+    {
+        return highestLineIndex;
+    }
 
+    public float returnLowestLine()
+    {
+        return lowestLineIndex;
+    }
 
     IEnumerator wait() //method for animation etc during sword
     {

@@ -12,6 +12,7 @@ TagManager:
   - checkAreaInFrontOfPlayer
   - PlayerSword
   - Obstacle
+  - BossBullet
   layers:
   - Default
   - TransparentFX
