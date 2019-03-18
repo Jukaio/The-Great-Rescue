@@ -12,9 +12,20 @@ public class BossStatus : MonoBehaviour
         currentHP = MaxHP;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if(currentHP <= 0)
+        {
+            //boss death stuff
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerBullet")
+            currentHP -= collision.GetComponent<BulletMoverPlayer>().damage;
+        if (collision.tag == "PlayerSword")
+            currentHP -= collision.GetComponent<swordAttack>().damage;
     }
 }

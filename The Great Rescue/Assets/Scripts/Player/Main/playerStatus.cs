@@ -53,13 +53,14 @@ public class playerStatus : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyBullet"
             || collision.gameObject.tag == "Enemy"
-            || collision.gameObject.tag == "Obstacle")
+            || collision.gameObject.tag == "Obstacle"
+            || collision.gameObject.tag == "BossBullet")
         {
             if (!waitActive)
             {
                 healthPoints = ApplyDamage(healthPoints, 1);
 
-                if (collision.gameObject.tag != "Obstacle" && collision.gameObject.tag != "BossBullet")
+                if (collision.gameObject.tag != "Obstacle" && collision.gameObject.tag != "BossBullet" && collision.gameObject.tag != "Boss")
                 {
                     Destroy(collision.gameObject);
                 }
@@ -72,6 +73,12 @@ public class playerStatus : MonoBehaviour
                
             }
         }
+
+        if (collision.gameObject.tag == "Boss")
+        {
+            healthPoints = ApplyDamage(healthPoints, 5);
+        }
+
     }
 
     //method for avoiding damage and not being able to shoot while hurt

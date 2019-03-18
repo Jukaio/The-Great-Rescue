@@ -13,6 +13,7 @@ TagManager:
   - PlayerSword
   - Obstacle
   - BossBullet
+  - Boss
   layers:
   - Default
   - TransparentFX

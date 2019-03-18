@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 448}
   m_MaxSize: {x: 22012, y: 10024}
   vertical: 0
-  controlID: 81
+  controlID: 103
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 135
+  controlID: 28
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 899
     height: 477
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 477
     width: 899
     height: 454
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -461,9 +461,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 740e0000
-      m_LastClickedID: 3700
-      m_ExpandedIDs: bcfbffff740e0000800e0000
+      m_SelectedIDs: 1cfbffff
+      m_LastClickedID: -1252
+      m_ExpandedIDs: 3efbffff52fbffffd4fbffff7c0e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,20 +525,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemy/Boss/Main
+    - Assets/Scripts/Player/Main
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Enemy/Boss/Main
+  - Assets/Scripts/Player/Main
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\The-Great-Rescue\The Great Rescue
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 220b0000
-    m_LastClickedID: 2850
-    m_ExpandedIDs: 00000000e2090000400a0000080b0000240b0000420b00006a0b0000fc0b0000440c0000620c00007e0c0000ba0c00002e0d0000580d0000602d000000ca9a3b
+    m_SelectedIDs: ea0b0000
+    m_LastClickedID: 3050
+    m_ExpandedIDs: 00000000da090000380a0000000b00001c0b00003a0b0000620b0000f40b00003c0c00005a0c0000760c0000b20c0000260d0000500d00005c2d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,7 +566,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e2090000400a0000080b0000240b0000420b00006a0b0000fc0b0000440c0000620c00007e0c0000ba0c00002e0d0000580d0000602d0000
+    m_ExpandedIDs: 00000000da090000380a0000000b00001c0b00003a0b0000620b0000f40b00003c0c00005a0c0000760c0000b20c0000260d0000500d00005c2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
