@@ -129,11 +129,11 @@ public class BossController : MonoBehaviour
         randomDir = Random.value - 0.5f;
         if (randomDir >= 0)
         {
-            slide = new Vector2(playerPositionOld.x + 3, playerPositionOld.y - 2);
+            slide = new Vector2(playerPositionOld.x + 3, playerPositionOld.y - 1);
         }
         else
         {
-            slide = new Vector2(playerPositionOld.x + 3, playerPositionOld.y + 2);
+            slide = new Vector2(playerPositionOld.x + 3, playerPositionOld.y + 1);
         }
 
 
