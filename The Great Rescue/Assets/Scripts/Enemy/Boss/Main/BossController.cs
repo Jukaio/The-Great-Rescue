@@ -25,8 +25,12 @@ public class BossController : MonoBehaviour
     Vector3 HighestLineVec;
     Vector3 LowestLineVec;
 
+    Vector2 slide;
+
     bool isMovingUp = true;
     public bool isInDash = false;
+
+    public float randomDir;
 
     void Start()
     {
@@ -121,19 +125,41 @@ public class BossController : MonoBehaviour
     IEnumerator DashAttack(Vector3 playerPositionOld, float oldBossX)
     {
         isInDash = true;
+
+        randomDir = Random.value - 0.5f;
+        if (randomDir >= 0)
+        {
+            slide = new Vector2(playerPositionOld.x + 3, playerPositionOld.y - 2);
+        }
+        else
+        {
+            slide = new Vector2(playerPositionOld.x + 3, playerPositionOld.y + 2);
+        }
+
+
         while (true)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerPositionOld, Time.deltaTime * moveSpeed * 2);
             if (gameObject.transform.position == playerPositionOld)
             {
+
                 while (true)
                 {
-                    gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector2(oldBossX, playerPositionOld.y), Time.deltaTime * moveSpeed);
-                    if (gameObject.transform.position.x == oldBossX)
+                    gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, slide, Time.deltaTime * moveSpeed);
+
+                    if (gameObject.transform.position.x == playerPositionOld.x + 3)
                     {
-                        dashAttackCooldownCounter = dashAttackCooldown;
-                        isInDash = false;
-                        yield break;
+                        while (true)
+                        {
+                            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector2(oldBossX, playerPositionOld.y), Time.deltaTime * moveSpeed);
+                            if (gameObject.transform.position.x == oldBossX)
+                            {
+                                dashAttackCooldownCounter = dashAttackCooldown;
+                                isInDash = false;
+                                yield break;
+                            }
+                            yield return new WaitForEndOfFrame();
+                        }
                     }
                     yield return new WaitForEndOfFrame();
                 }

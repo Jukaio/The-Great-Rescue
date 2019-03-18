@@ -1633,6 +1633,7 @@ MonoBehaviour:
   dashAttackCooldownCounter: 0
   indexMode: 0
   isInDash: 0
+  randomDir: 0
 --- !u!4 &827110235
 Transform:
   m_ObjectHideFlags: 0
@@ -2296,6 +2297,11 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 827110233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
 --- !u!1001 &1806858058

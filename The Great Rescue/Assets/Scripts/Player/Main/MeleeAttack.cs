@@ -9,6 +9,8 @@ public class MeleeAttack : MonoBehaviour
     public List<GameObject> enemies;
     public float range;
 
+    public GameObject Boss;
+
     public int theCheck;
 
 
@@ -30,16 +32,29 @@ public class MeleeAttack : MonoBehaviour
 
         foreach(GameObject enemy in enemies)
         {
-            if (Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
-
+            if (enemy == null)
+                continue;
+            else if (Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
             {
                 if (enemy.transform.position.x < EnemyCheckArea.transform.position.x + (range / 2)) //works woohoo
                 {
                     theCheck++;
                     isInMeleeRange = true;
                 }
+                else
+                    continue;
             }
         }
+        if (Boss == null)
+        {
+
+        }
+        else if (Boss.transform.position.x < EnemyCheckArea.transform.position.x + (range / 2)) //works woohoo
+        {
+            theCheck++;
+            isInMeleeRange = true;
+        }
+
 
         if (theCheck == 0)
             isInMeleeRange = false;

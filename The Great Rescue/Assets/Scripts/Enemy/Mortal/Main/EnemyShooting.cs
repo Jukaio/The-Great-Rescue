@@ -11,7 +11,7 @@ public class EnemyShooting : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextFire && gameObject.transform.position.x <= 11)
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);

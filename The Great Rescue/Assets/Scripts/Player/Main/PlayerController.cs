@@ -113,6 +113,7 @@ public class PlayerController : MonoBehaviour
                     Instantiate(swordSound, gameObject.transform.position, Quaternion.identity);
                     meleeWeapon.transform.localScale = new Vector3(10f * Time.deltaTime, 1f, 1f); //frame time = 0.02 secs
                     isInMeleeAttack = true;
+
                     meleeAttackCooldownHolder = meleeAttackCooldown;
                 }
             }
