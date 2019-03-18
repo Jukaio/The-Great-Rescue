@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
             direction = transform.position.y - oldPos.y;
         }
 
-        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false && gameObject.transform.position.y <= moveDistance * highestLineIndex)
+        if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false /*&& gameObject.transform.position.y <= moveDistance * highestLineIndex*/)
         {
             AdjustPosition();
         }
@@ -229,25 +229,27 @@ public class PlayerController : MonoBehaviour
 
     private void AdjustPosition() //Method for adjusting the player position
     {
-        for (float i = moveDistance * highestLineIndex; i >= moveDistance * lowestLineIndex; i -= moveDistance)
+        for (float i = moveDistance * highestLineIndex + originY; i >= moveDistance * lowestLineIndex; i -= moveDistance)
         {
             if (direction > 0)
             {
-                if ((transform.position.y > originY + i &&
-                    transform.position.y < originY + i + moveDistance &&
-                    transform.position.y != originY + i))
+                if ((transform.position.y >  i &&
+                    transform.position.y <  i + moveDistance &&
+                    transform.position.y !=  i))
                 {
-                    travelVector = new Vector3(transform.position.x, originY + i + moveDistance, transform.position.z);
+                    travelVector = new Vector3(transform.position.x,  i + moveDistance, transform.position.z);
+                    Debug.Log(travelVector);
                     transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
                 }
             }
             else if (direction < 0)
             {
-                if ((transform.position.y < originY + i &&
-                    transform.position.y > originY + i - moveDistance &&
-                    transform.position.y != originY + i))
+                if ((transform.position.y <  i &&
+                    transform.position.y >  i - moveDistance &&
+                    transform.position.y !=  i))
                 {
-                    travelVector = new Vector3(transform.position.x, originY + i - moveDistance, transform.position.z);
+                    Debug.Log("Yo");
+                    travelVector = new Vector3(transform.position.x,  i - moveDistance, transform.position.z);
                     transform.position = Vector3.MoveTowards(transform.position, travelVector, Time.deltaTime * moveSpeed);
                 }
             }

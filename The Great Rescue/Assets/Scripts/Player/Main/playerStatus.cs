@@ -28,7 +28,6 @@ public class playerStatus : MonoBehaviour
             Destroy(gameObject.transform.parent.gameObject);
         }
             
-        gameObject.transform.localScale = new Vector3(1.1f - (gameObject.transform.position.y / 16f), 1.1f - (gameObject.transform.position.y / 16f), 1f);
         
 
         //Buff data

@@ -2302,6 +2302,11 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 827110233}
+    - target: {fileID: 4233610161382109102, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
 --- !u!1001 &1806858058
