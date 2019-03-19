@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d51e0b3ecdf014f929ad0a6a2c907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathSound: {fileID: 7944411375970874054, guid: aa845fdd52f0c3640916acd67a9604a9,
+  deathAnimation: {fileID: 8321438095053891067, guid: 79091b2c8cd3f57408e0a94b3419628a,
     type: 3}
   healthPoints: 25
   powerUp: {fileID: 942288657698764845, guid: 0ac5dccbbcceb184c8b66620b3f73432, type: 3}

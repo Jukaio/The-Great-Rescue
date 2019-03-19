@@ -494,6 +494,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 146387062}
     m_Modifications:
+    - target: {fileID: 3345293688194234467, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
+        type: 3}
+      propertyPath: m_Name
+      value: MovementCheck01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345293688194234467, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2593378276033116226, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -547,16 +557,6 @@ PrefabInstance:
     - target: {fileID: 2593378276033116226, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3345293688194234467, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
-        type: 3}
-      propertyPath: m_Name
-      value: MovementCheck01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3345293688194234467, guid: 9f2bb5554a1605b44b9c8e6c383bf235,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1017,6 +1017,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 146387062}
     m_Modifications:
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_Name
+      value: MovementCheck02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1070,16 +1080,6 @@ PrefabInstance:
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
-        type: 3}
-      propertyPath: m_Name
-      value: MovementCheck02
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

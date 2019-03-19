@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyStatus : MonoBehaviour
 {
-    public GameObject deathSound;
+    public GameObject deathAnimation;
     public float healthPoints;
     public GameObject powerUp;
     public GameObject bloodEffect;
@@ -23,7 +23,7 @@ public class enemyStatus : MonoBehaviour
 
             if (gameObject != null)
             {
-                Instantiate(deathSound, gameObject.transform.position, Quaternion.identity);
+                Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);
                 OnEnemyJustDied(); 
                 Destroy(gameObject);
             }
