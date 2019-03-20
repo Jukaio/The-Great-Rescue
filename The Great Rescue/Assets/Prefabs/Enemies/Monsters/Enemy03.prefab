@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3dfaa6a00409b6448fa69426bb88c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimatorChild: {fileID: 0}
+  AnimatorChild: {fileID: 8571382915884562968}
   length: 0
 --- !u!1 &8571382915884562968
 GameObject:

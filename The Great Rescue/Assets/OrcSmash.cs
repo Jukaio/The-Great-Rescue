@@ -31,7 +31,7 @@ public class OrcSmash : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.transform.position.x < -4.9f && Anim.GetBool("activate") == false)
+        if (gameObject.transform.position.x < -4.2f && Anim.GetBool("activate") == false)
             StartCoroutine(OrcAttack(CurrentStateInfo.length));
     }
 }
