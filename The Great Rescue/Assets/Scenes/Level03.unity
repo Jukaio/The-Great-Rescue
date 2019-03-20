@@ -603,7 +603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc82b9c39f6f494b97f1d6856f26ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highscore: 0
   enemies: []
   highscoreText: {fileID: 601791410}
 --- !u!114 &601791410

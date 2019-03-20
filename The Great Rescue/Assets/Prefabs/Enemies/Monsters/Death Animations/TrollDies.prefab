@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2513014596049575461}
   - component: {fileID: 2513014596049575450}
   - component: {fileID: 1963591452593435992}
+  - component: {fileID: 8507214116959893205}
+  - component: {fileID: 2118900372806559910}
   m_Layer: 0
   m_Name: TrollDies
   m_TagString: Untagged
@@ -196,3 +198,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8507214116959893205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513014596049575451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f48e61c774080d4a94b44dc2fc302f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &2118900372806559910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513014596049575451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e807b301ac4c6a4b947c49e83c3d105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gO: {fileID: 2513014596049575451}

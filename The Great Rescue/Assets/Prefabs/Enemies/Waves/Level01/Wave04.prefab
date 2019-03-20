@@ -474,6 +474,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.864857
       objectReference: {fileID: 0}
+    - target: {fileID: 120971168, guid: 8fdcf42efddf8af4780ad8516043766a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 435147121089776836, guid: 8fdcf42efddf8af4780ad8516043766a,
         type: 3}
       propertyPath: animatorChild
@@ -581,11 +585,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6979243940733952288}
     m_Modifications:
-    - target: {fileID: 9041516945724533669, guid: 5e2d5d7646094924c8cc2043d5b520c3,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy01 (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 5228822930596653063, guid: 5e2d5d7646094924c8cc2043d5b520c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -640,6 +639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9041516945724533669, guid: 5e2d5d7646094924c8cc2043d5b520c3,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy01 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8212845001322848381, guid: 5e2d5d7646094924c8cc2043d5b520c3,
         type: 3}
