@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1313156091793616815}
   - component: {fileID: 1313156091793616802}
   - component: {fileID: 7531651472982918912}
+  - component: {fileID: 4436465020760124415}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Obstacle
@@ -142,3 +143,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4436465020760124415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313156091793616814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e807b301ac4c6a4b947c49e83c3d105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gO: {fileID: 1313156091793616814}
