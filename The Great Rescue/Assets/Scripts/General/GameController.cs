@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
         public float startWait;
         public float waveWait;
         private float nextWave;
-
+    private int currentWave;
 
     public List<GameObject> waves = new List<GameObject>();
     public List<GameObject> enemies = new List<GameObject>();
@@ -29,8 +29,8 @@ public class GameController : MonoBehaviour
             Vector3 spawnPosition = gameObject.transform.position;
             Quaternion spawnRotation = Quaternion.identity;
 
-            waves.Add(Instantiate(toSpawn[Random.Range(0, toSpawn.Length)], spawnPosition, spawnRotation));
-
+            waves.Add(Instantiate(toSpawn[currentWave], spawnPosition, spawnRotation));
+            currentWave++;
             for (int j = 0; j < waves[waves.Count - 1].transform.childCount; j++)
             {
                 enemies.Add(waves[waves.Count - 1].transform.GetChild(j).gameObject);
