@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HigScore : MonoBehaviour
 {
-    public float highscore;
+    static public int highscore;
     public GameObject[] enemies;
     public Text highscoreText;
 
