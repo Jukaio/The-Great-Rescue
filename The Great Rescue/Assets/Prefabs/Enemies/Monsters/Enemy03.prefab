@@ -92,7 +92,6 @@ GameObject:
   - component: {fileID: 9136693766943589691}
   - component: {fileID: 1307665710731417497}
   - component: {fileID: 120971168}
-  - component: {fileID: 120971169}
   - component: {fileID: 2593354266740058425}
   - component: {fileID: 435147121089776836}
   m_Layer: 10
@@ -169,8 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d51e0b3ecdf014f929ad0a6a2c907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAnimation: {fileID: 8321438095053891067, guid: 79091b2c8cd3f57408e0a94b3419628a,
-    type: 3}
+  deathAnimation: {fileID: 0}
   healthPoints: 25
   powerUp: {fileID: 942288657698764845, guid: 0ac5dccbbcceb184c8b66620b3f73432, type: 3}
   bloodEffect: {fileID: 864936101217723908, guid: 60626a9e740c825419ba8987bb744b7e,
@@ -223,25 +221,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &120971169
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8136423487842516367}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd80667010073984eabea98656622080, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &2593354266740058425
 AudioSource:
   m_ObjectHideFlags: 0

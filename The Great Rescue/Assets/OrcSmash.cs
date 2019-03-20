@@ -14,25 +14,24 @@ public class OrcSmash : MonoBehaviour
         Anim = AnimatorChild.GetComponent<Animator>();
         CurrentStateInfo = Anim.GetCurrentAnimatorStateInfo(0);
         length = CurrentStateInfo.length;
-        StartCoroutine(OrcAttack(CurrentStateInfo.length));
     }
+
+
+
 
     IEnumerator OrcAttack(float length)
     {
-        while (true)
-        {
-            yield return new WaitForSeconds((length / 3) * 2);
-            gameObject.GetComponent<Collider2D>().offset = new Vector2(-2f, gameObject.GetComponent<Collider2D>().offset.y);
+        Anim.SetBool("activate", true);
 
-            yield return new WaitForSeconds(length / 3);
-            gameObject.GetComponent<Collider2D>().offset = new Vector2(0, gameObject.GetComponent<Collider2D>().offset.y);
-
-        }
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<Collider2D>().offset = new Vector2(-2f, gameObject.GetComponent<Collider2D>().offset.y);
+        yield return new WaitForSeconds(10);
     }
 
 
     void Update()
     {
-
+        if (gameObject.transform.position.x < -4.9f && Anim.GetBool("activate") == false)
+            StartCoroutine(OrcAttack(CurrentStateInfo.length));
     }
 }
