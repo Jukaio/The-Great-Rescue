@@ -1835,6 +1835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1521856903}
   - component: {fileID: 1521856904}
+  - component: {fileID: 1521856905}
   m_Layer: 0
   m_Name: RestartGame
   m_TagString: Untagged
@@ -1868,6 +1869,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8421f2c950ae0e24cbb5186b9f73435c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1521856905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521856902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ea50442ea089842924ce9b8d55b610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseObject: {fileID: 0}
 --- !u!4 &1571323382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6522818139512387648, guid: 60f239ca83472494b8c0e4098b798182,
