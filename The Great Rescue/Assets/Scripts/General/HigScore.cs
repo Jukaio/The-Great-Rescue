@@ -15,7 +15,10 @@ public class HigScore : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
             if (enemy.GetComponent<enemyStatus>().healthPoints <= 0)
+            {
                 highscore += 10;
-        highscoreText.text = "Score: " + highscore;
+                PowerupBar.power++;
+            }
+        highscoreText.text = "" + highscore;
     }
 }

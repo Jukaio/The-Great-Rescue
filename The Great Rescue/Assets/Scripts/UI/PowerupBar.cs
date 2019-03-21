@@ -18,8 +18,7 @@ public class PowerupBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //HealthbarScript.health -= "value" makes the bar go down we might want some other way of doing this. But this is how to make it go down for now
-        powerBar.fillAmount = power / 100;
+        powerBar.fillAmount = power / 50;
         
 
     }
