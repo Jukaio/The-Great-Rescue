@@ -20,7 +20,6 @@ public class enemyStatus : MonoBehaviour
         //Death check
         if (healthPoints <= 0)
         {
-
             if (gameObject != null)
             {
                 Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);

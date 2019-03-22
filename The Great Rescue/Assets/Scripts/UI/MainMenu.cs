@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject Credits;
+    public UIFader FadeOut;
+
+
+
+
 
     // Start is called before the first frame update
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        FadeOut.gameObject.SetActive(true);
+        StartCoroutine(waitAndPlayGame(FadeOut.fadeTime));
+
     }
 
     public void QuitGame()
@@ -17,13 +24,32 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadSceneIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
+    public void LoadHighScoreFromMenu()
+    {
+        SceneManager.LoadScene(4);
+        
+    }
+
     public void OpenCredit()
     {
-        Credits.SetActive(true);
+        if(Credits != null)
+            Credits.SetActive(true);
     }
 
     public void CloseCredit()
     {
-        Credits.SetActive(false);
+        if (Credits != null)
+            Credits.SetActive(false);
+    }
+    
+    IEnumerator waitAndPlayGame(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

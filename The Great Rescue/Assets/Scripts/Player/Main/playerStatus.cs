@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerStatus : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class playerStatus : MonoBehaviour
         {
             Instantiate(deathSound, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject.transform.parent.gameObject);
+            SceneManager.LoadScene(4);
         }
             
         

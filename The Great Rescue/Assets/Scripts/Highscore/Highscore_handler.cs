@@ -15,9 +15,13 @@ public class Highscore_handler : MonoBehaviour
 	bool buttonClicked = false;
 	int score;
 
+    public bool fromStartMenu = false;
+
     void Start()
     {
+        
 		highScoreBoard.SetActive(false);
+
 		inputFieldObjects.SetActive(true);
 		ViewScores();
     }
