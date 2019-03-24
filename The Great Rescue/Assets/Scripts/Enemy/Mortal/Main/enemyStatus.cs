@@ -17,18 +17,6 @@ public class enemyStatus : MonoBehaviour
     void Update()
     {
         
-        //Death check
-        if (healthPoints <= 0)
-        {
-            if (gameObject != null)
-            {
-                Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);
-                OnEnemyJustDied(); 
-                Destroy(gameObject);
-            }
-
-        }
-
         if (gameObject.transform.position.x <= -11)
             Destroy(gameObject);
     }
@@ -53,6 +41,16 @@ public class enemyStatus : MonoBehaviour
         {
             healthPoints = ApplyDamage(healthPoints, collision.GetComponent<BulletMoverPlayer>().damage);
             GameObject.FindGameObjectWithTag("Player").GetComponent<playerStatus>().specialBar += 1;
+
+            if (healthPoints <= 0)
+            {
+
+                Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);
+                OnEnemyJustDied();
+                Destroy(gameObject, 0.001f);
+
+
+            }
 
             Instantiate(bloodEffect, transform.position, Quaternion.identity);
         }

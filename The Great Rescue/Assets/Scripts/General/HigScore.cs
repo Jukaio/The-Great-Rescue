@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class HigScore : MonoBehaviour
 {
     static public int highscore;
-    public GameObject[] enemies;
+    public GameObject spawner;
+    public List<GameObject> enemies;
     public Text highscoreText;
+
+    private void Awake()
+    {
+        enemies = spawner.GetComponent<GameController>().enemies;
+    }
 
 
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
             if (enemy.GetComponent<enemyStatus>().healthPoints <= 0)
             {

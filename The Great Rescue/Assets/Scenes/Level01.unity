@@ -1309,6 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc82b9c39f6f494b97f1d6856f26ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 1692031216}
   enemies: []
   highscoreText: {fileID: 601791410}
 --- !u!114 &601791410
@@ -2487,6 +2488,12 @@ Transform:
   m_Father: {fileID: 146387062}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1692031216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5040457649025078100, guid: 33db4284c67d4104a8e3d7d00b052958,
+    type: 3}
+  m_PrefabInstance: {fileID: 1749638348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1709597278
 PrefabInstance:
   m_ObjectHideFlags: 0
