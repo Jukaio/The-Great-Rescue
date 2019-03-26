@@ -2581,6 +2581,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: World01
       objectReference: {fileID: 0}
+    - target: {fileID: 5040457649025078100, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5040457648536481797, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2635,11 +2640,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040457649025078100, guid: 33db4284c67d4104a8e3d7d00b052958,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928120, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
@@ -2700,6 +2700,11 @@ PrefabInstance:
       propertyPath: waveWait
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5040457649025078101, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: FadeOut
+      value: 
+      objectReference: {fileID: 11708422}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
 --- !u!1001 &1806858058

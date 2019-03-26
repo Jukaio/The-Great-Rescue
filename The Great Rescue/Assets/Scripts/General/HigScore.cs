@@ -12,15 +12,17 @@ public class HigScore : MonoBehaviour
 
     private void Awake()
     {
-        enemies = spawner.GetComponent<GameController>().enemies;
+
     }
 
 
     void Update()
     {
+        enemies = spawner.GetComponent<GameController>().enemies;
         foreach (GameObject enemy in enemies)
-            if (enemy.GetComponent<enemyStatus>().healthPoints <= 0)
+            if (enemy.tag == "Enemy" && enemy.GetComponent<enemyStatus>().healthPoints <= 0)
             {
+                Debug.Log(enemy.name);
                 highscore += 10;
                 PowerupBar.power++;
             }

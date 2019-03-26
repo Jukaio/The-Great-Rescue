@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameController : MonoBehaviour
         public float waveWait;
         private float nextWave;
     private int currentWave;
+
+    public UIFader FadeOut;
 
     public List<GameObject> waves = new List<GameObject>();
     public List<GameObject> enemies = new List<GameObject>();
@@ -22,6 +25,12 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if (currentWave >= toSpawn.Length && enemies.Count == 0)
+        {
+            FadeOut.gameObject.SetActive(true);
+            StartCoroutine(waitAndPlayGame(FadeOut.fadeTime));
+        }
+
         if(Time.time > nextWave)
         {
             nextWave = Time.time + waveWait;
@@ -55,7 +64,13 @@ public class GameController : MonoBehaviour
             }
 
         }
+        
+    }
 
+    IEnumerator waitAndPlayGame(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
