@@ -8,6 +8,7 @@ public class MeleeAttack : MonoBehaviour
     public bool isInMeleeRange;
     public List<GameObject> enemies;
     public float range;
+    public GameObject spawner;
 
     public GameObject Boss;
 
@@ -26,7 +27,7 @@ public class MeleeAttack : MonoBehaviour
                                                         gameObject.transform.position.y, 
                                                         gameObject.transform.position.z);
 
-        enemies = gameObject.GetComponent<PlayerController>().enemies;
+        enemies = spawner.GetComponent<GameController>().enemies;
 
         theCheck = 0;
 
@@ -34,12 +35,15 @@ public class MeleeAttack : MonoBehaviour
         {
             if (enemy == null)
                 continue;
-            else if (Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
+            else if (enemy.tag == "Enemy" && 
+                enemy.transform.position.y >= gameObject.transform.position.y - 1f &&
+                enemy.transform.position.y <= gameObject.transform.position.y - 0.3f)
             {
                 if (enemy.transform.position.x < EnemyCheckArea.transform.position.x + (range / 2)) //works woohoo
                 {
                     theCheck++;
                     isInMeleeRange = true;
+                    Debug.Log(enemy.name);
                 }
                 else
                     continue;
@@ -47,7 +51,7 @@ public class MeleeAttack : MonoBehaviour
         }
         if (Boss == null)
         {
-
+            
         }
         else if (Boss.transform.position.x < EnemyCheckArea.transform.position.x + (range / 2)) //works woohoo
         {

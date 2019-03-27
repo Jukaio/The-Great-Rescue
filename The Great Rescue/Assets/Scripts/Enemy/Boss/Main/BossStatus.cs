@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossStatus : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class BossStatus : MonoBehaviour
     {
         if(currentHP <= 0)
         {
-            //boss death stuff
+            SceneManager.LoadScene(4);
         }
     }
 

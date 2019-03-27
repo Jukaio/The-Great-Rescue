@@ -11,8 +11,12 @@ public class enemyStatus : MonoBehaviour
     int rndNmbr;
     const float m_dropChance = 1f / 2f; // 50% chance, change to 1f / 10f for 10% chance etc.. .. .. . . .. . 
     // Update is called once per frame
+    playerStatus PlayerStatus;
 
-
+    private void Awake()
+    {
+        PlayerStatus = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStatus>();
+    }
 
     void Update()
     {
@@ -40,27 +44,35 @@ public class enemyStatus : MonoBehaviour
         if (collision.gameObject.tag == "PlayerBullet")
         {
             healthPoints = ApplyDamage(healthPoints, collision.GetComponent<BulletMoverPlayer>().damage);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<playerStatus>().specialBar += 1;
+            PlayerStatus.specialBar += 5;
 
-            if (healthPoints <= 0)
-            {
-
-                Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);
-                OnEnemyJustDied();
-                Destroy(gameObject, 0.001f);
-
-
-            }
-
-            Instantiate(bloodEffect, transform.position, Quaternion.identity);
+            deathCheck();
         }
             
 
         else if (collision.gameObject.tag == "PlayerSword")
         {
             Debug.Log("Shot hit!");
+            PlayerStatus.specialBar += 10;
             healthPoints = ApplyDamage(healthPoints, collision.GetComponent<swordAttack>().damage);
+
+            deathCheck();
         }
+    }
+
+    void deathCheck()
+    {
+        if (healthPoints <= 0)
+        {
+
+            Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);
+            OnEnemyJustDied();
+            Destroy(gameObject, 0.001f);
+
+
+        }
+
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);
     }
 
     float ApplyDamage(float health, float damage)

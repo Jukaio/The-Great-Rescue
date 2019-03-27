@@ -20,6 +20,11 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void UnloadHighscore()
+    {
+        SceneManager.UnloadSceneAsync(4);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -32,8 +37,9 @@ public class MainMenu : MonoBehaviour
 
     public void LoadHighScoreFromMenu()
     {
-        SceneManager.LoadScene(4);
-        
+        //FadeOut.gameObject.SetActive(true);
+        //StartCoroutine(waitAndLoadHighscore(FadeOut.fadeTime));
+        SceneManager.LoadScene(4, LoadSceneMode.Additive);
     }
 
     public void OpenCredit()
@@ -52,5 +58,11 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator waitAndLoadHighscore(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(4, LoadSceneMode.Additive);
     }
 }

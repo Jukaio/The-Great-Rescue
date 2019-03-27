@@ -530,9 +530,9 @@ RectTransform:
   - {fileID: 845194326}
   - {fileID: 1425655682}
   - {fileID: 754036241}
+  - {fileID: 930529358}
   - {fileID: 1331241897}
   - {fileID: 1585631368}
-  - {fileID: 930529358}
   - {fileID: 182242714}
   - {fileID: 2145088514}
   m_Father: {fileID: 0}
@@ -844,7 +844,7 @@ RectTransform:
   m_Children:
   - {fileID: 1702572437}
   m_Father: {fileID: 656977203}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -878,9 +878,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fc2da67fcd3c06f43ba11eddc9e72a63,
+    m_HighlightedSprite: {fileID: 21300000, guid: e4fdae79c02e055469b64f49b6f622cf,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9eadde217c910914d98b527491ec252a, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: d0f1adf3865ffbe4b90611d4be879cd7, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -893,8 +893,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 656977204}
-        m_MethodName: LoadSceneIndex
-        m_Mode: 3
+        m_MethodName: LoadHighScoreFromMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1118,7 +1118,7 @@ RectTransform:
   m_Children:
   - {fileID: 83954747}
   m_Father: {fileID: 656977203}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1384,7 +1384,7 @@ RectTransform:
   m_Children:
   - {fileID: 937380324}
   m_Father: {fileID: 656977203}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 1702572439}
   - component: {fileID: 1702572438}
   m_Layer: 5
-  m_Name: PlayText
+  m_Name: HighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1462,8 +1462,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -3.5, y: -1.199997}
+  m_SizeDelta: {x: 116.1, y: 81.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702572438
 MonoBehaviour:
@@ -1485,7 +1485,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9a7621a62d35f9b40b3f70aee10c0aff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86d0382d96890754f9c82075f7ee7c0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

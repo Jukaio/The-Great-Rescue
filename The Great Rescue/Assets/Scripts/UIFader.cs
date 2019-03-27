@@ -8,6 +8,19 @@ public class UIFader : MonoBehaviour{
     public float fadeTime;
     public bool fadeIn;
 
+    private void OnEnable()
+    {
+        Image = gameObject.GetComponent<CanvasGroup>();
+        if (fadeIn)
+        {
+            FadeIn();
+        }
+        else
+        {
+            FadeOut();
+        }
+    }
+
     private void Start()
     {
         Image = gameObject.GetComponent<CanvasGroup>();
