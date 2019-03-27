@@ -9,7 +9,7 @@ public class BossController : MonoBehaviour
 
     public float moveSpeed;
     private float originalMoveSpeed;
-
+    Animator m_Animator;
     public GameObject shotSpawn;
     public List<GameObject> bullets;
     private float nextFire;
@@ -36,7 +36,7 @@ public class BossController : MonoBehaviour
     {
         Player = Player.GetComponent<PlayerController>();
         originalMoveSpeed = moveSpeed;
-
+        m_Animator = GetComponent<Animator>();
 
         StartCoroutine(Shoot());
     }
@@ -81,7 +81,6 @@ public class BossController : MonoBehaviour
     {
         while(true)
         {
-
             bullets.RemoveRange(0, bullets.Count);
             for (int i = 0; i < transform.childCount; i++)
                 bullets.Add(gameObject.transform.GetChild(i).gameObject);
@@ -107,16 +106,18 @@ public class BossController : MonoBehaviour
                 dashAttackCooldown = 4;
             }
 
-            
+
             if (!isInDash)
             {
                 for (int i = 0; i < indexCount; i++)
                 {
+                    m_Animator.SetBool("isRangeAttacking", true);
                     bullets[i].transform.position = gameObject.transform.position;
                     bullets[i].SetActive(true);
                     bullets[i].transform.parent = gameObject.transform.parent.parent;
                     yield return new WaitForSeconds(fireRate);
                 }
+                m_Animator.SetBool("isRangeAttacking", false);
             }
             yield return new WaitForSeconds(reloadTime);
         }
@@ -125,6 +126,7 @@ public class BossController : MonoBehaviour
     IEnumerator DashAttack(Vector3 playerPositionOld, float oldBossX)
     {
         isInDash = true;
+        m_Animator.SetBool("isCharging", true);
 
         randomDir = Random.value - 0.5f;
         if (randomDir >= 0)
@@ -154,6 +156,8 @@ public class BossController : MonoBehaviour
                             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, new Vector2(oldBossX, playerPositionOld.y), Time.deltaTime * moveSpeed);
                             if (gameObject.transform.position.x == oldBossX)
                             {
+                                m_Animator.SetBool("isCharging", false);
+
                                 dashAttackCooldownCounter = dashAttackCooldown;
                                 isInDash = false;
                                 yield break;

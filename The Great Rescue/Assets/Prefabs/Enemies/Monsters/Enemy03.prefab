@@ -168,10 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d51e0b3ecdf014f929ad0a6a2c907e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathAnimation: {fileID: 8321438095053891067, guid: 79091b2c8cd3f57408e0a94b3419628a,
+  deathAnimation: {fileID: 8321438095053891067, guid: 6698acfad54d31740b2fe328249940d0,
     type: 3}
   healthPoints: 25
-  powerUp: {fileID: 942288657698764845, guid: 0ac5dccbbcceb184c8b66620b3f73432, type: 3}
+  healPowerUp: {fileID: 942288657698764845, guid: a14e2e561c05b5d41b78c56fd7c2d8e8,
+    type: 3}
+  dmgPowerUp: {fileID: 942288657698764845, guid: 0ac5dccbbcceb184c8b66620b3f73432,
+    type: 3}
   bloodEffect: {fileID: 864936101217723908, guid: 60626a9e740c825419ba8987bb744b7e,
     type: 3}
 --- !u!212 &120971168

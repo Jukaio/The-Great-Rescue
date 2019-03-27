@@ -9,7 +9,7 @@ public class MeleeAttack : MonoBehaviour
     public List<GameObject> enemies;
     public float range;
     public GameObject spawner;
-
+    public GameObject explosion;
     public GameObject Boss;
 
     public int theCheck;
@@ -63,11 +63,13 @@ public class MeleeAttack : MonoBehaviour
         if (theCheck == 0)
             isInMeleeRange = false;
 
-        if (Input.GetKey(KeyCode.X)) //Clear boarda
+        if (Input.GetKey(KeyCode.X) && PowerupBar.power >= 10) //Clear boarda
         {
             foreach (GameObject enemy in enemies)
             {
-                Destroy(enemy);
+                Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+                PowerupBar.power = 0;
+                Destroy(enemy); 
             }
         }
     }

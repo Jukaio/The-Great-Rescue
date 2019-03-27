@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
         private float nextWave;
     private int currentWave;
 
+    bool isInTransition;
+
     public UIFader FadeOut;
 
     public List<GameObject> waves = new List<GameObject>();
@@ -20,12 +22,13 @@ public class GameController : MonoBehaviour
 
     void Start()
         {
+            isInTransition = false;
             StartCoroutine(SpawnWaves());
         }
 
     private void Update()
     {
-        if (currentWave >= toSpawn.Length && enemies.Count == 0)
+        if (currentWave >= toSpawn.Length && enemies.Count == 0 && isInTransition == false)
         {
             FadeOut.gameObject.SetActive(true);
             StartCoroutine(waitAndPlayGame(FadeOut.fadeTime));
@@ -58,7 +61,11 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < enemies.Count; i++)
         {
-            if (enemies[i] == null)
+            if(enemies[i].tag == "SomeTransitionBullshit" && enemies[i].transform.position.x <= 9)
+            {
+                enemies.Remove(enemies[i]);
+            }
+            else if (enemies[i].transform.position.x <= -7.6f)
             {
                 enemies.Remove(enemies[i]);
             }
@@ -69,6 +76,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator waitAndPlayGame(float time)
     {
+        isInTransition = true;
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

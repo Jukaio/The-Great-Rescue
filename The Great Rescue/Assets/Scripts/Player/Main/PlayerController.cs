@@ -190,9 +190,9 @@ public class PlayerController : MonoBehaviour
         {
             playerStatus.specialBar = 0;
 
-            foreach(GameObject enemy in enemies)
+            foreach (GameObject enemy in enemies)
             {
-                if(enemy.tag == "Enemy")
+                if (enemy.tag == "Enemy")
                     enemy.GetComponent<enemyStatus>().healthPoints -= 50;
             }
             Debug.Log("3");

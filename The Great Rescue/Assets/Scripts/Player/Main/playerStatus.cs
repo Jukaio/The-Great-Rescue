@@ -78,7 +78,8 @@ public class playerStatus : MonoBehaviour
 
         if (collision.gameObject.tag == "Boss")
         {
-            healthPoints = ApplyDamage(healthPoints, 5);
+            healthPoints = ApplyDamage(healthPoints, 2);
+            HealthBarScript.health -= 20;
         }
 
     }

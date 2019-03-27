@@ -18,7 +18,7 @@ public class PowerupBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        powerBar.fillAmount = power / 50;
+        powerBar.fillAmount = power /10;
         
 
     }
