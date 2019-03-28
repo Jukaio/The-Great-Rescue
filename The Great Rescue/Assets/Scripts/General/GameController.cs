@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
         public float startWait;
         public float waveWait;
         private float nextWave;
-    private int currentWave;
+    public int currentWave;
 
     bool isInTransition;
 
@@ -65,13 +65,14 @@ public class GameController : MonoBehaviour
             {
                 enemies.Remove(enemies[i]);
             }
+            else if (enemies[i].activeSelf == false)
+                enemies.Remove(enemies[i]);
+
             else if (enemies[i].transform.position.x <= -7.6f)
             {
                 enemies.Remove(enemies[i]);
             }
 
-            if (enemies[i].activeSelf == false)
-                enemies.Remove(enemies[i]);
 
         }
         

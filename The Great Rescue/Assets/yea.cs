@@ -35,7 +35,9 @@ public class yea : MonoBehaviour
         yield return new WaitForSeconds(6f);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4, LoadSceneMode.Additive);
+
 
 
     }

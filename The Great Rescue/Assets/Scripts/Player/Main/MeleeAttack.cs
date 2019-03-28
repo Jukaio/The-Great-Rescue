@@ -67,9 +67,12 @@ public class MeleeAttack : MonoBehaviour
         {
             foreach (GameObject enemy in enemies)
             {
-                Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
-                PowerupBar.power = 0;
-                Destroy(enemy); 
+                if (enemy.tag == "Enemy" && enemy.transform.position.x < 10)
+                    {
+                    Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+                    PowerupBar.power = 0;
+                    enemy.SetActive(false);
+                }
             }
         }
     }

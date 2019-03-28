@@ -245,6 +245,11 @@ PrefabInstance:
       propertyPath: FadeOut
       value: 
       objectReference: {fileID: 1479122650}
+    - target: {fileID: 5040457649025078101, guid: 36883499fd3ba9646ae22671d8fa0b10,
+        type: 3}
+      propertyPath: currentWave
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928120, guid: 36883499fd3ba9646ae22671d8fa0b10,
         type: 3}
       propertyPath: hitSound
@@ -979,6 +984,21 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 59127661}
+    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: meleeAttackRange
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
 --- !u!1 &1592019233 stripped

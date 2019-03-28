@@ -603,6 +603,11 @@ PrefabInstance:
       propertyPath: FadeOut
       value: 
       objectReference: {fileID: 469121845}
+    - target: {fileID: 5040457649025078101, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: currentWave
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5040457648481663509, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -622,11 +627,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.225227
       objectReference: {fileID: 0}
-    - target: {fileID: 5040457649214928120, guid: 33db4284c67d4104a8e3d7d00b052958,
-        type: 3}
-      propertyPath: healthPoints
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
       propertyPath: range
@@ -637,6 +637,16 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 688705662}
+    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: meleeAttackRange
+      value: 1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}
 --- !u!1001 &7968382687750621460

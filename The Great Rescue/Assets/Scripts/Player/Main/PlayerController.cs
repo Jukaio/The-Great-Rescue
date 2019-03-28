@@ -81,10 +81,7 @@ public class PlayerController : MonoBehaviour
     {
         enemies = GameSpawner.GetComponent<GameController>().enemies;
 
-        if (Input.GetKey("b"))
-            {
-                Destroy(enemies[1]);
-            }
+        
 
         
         //Attacks

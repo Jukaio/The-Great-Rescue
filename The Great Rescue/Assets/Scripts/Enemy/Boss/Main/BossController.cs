@@ -88,18 +88,13 @@ public class BossController : MonoBehaviour
                 bullets.Add(gameObject.transform.GetChild(i).gameObject);
 
 
-            if(GetComponent<BossStatus>().currentHP > (GetComponent<BossStatus>().MaxHP / 3) * 2)
+            if(GetComponent<BossStatus>().currentHP > (GetComponent<BossStatus>().MaxHP / 2))
             {
                 indexMode = 0;
                 indexCount = bullets.Count - 7;
                 dashAttackCooldown = 8;
             }
-            else if(GetComponent<BossStatus>().currentHP > GetComponent<BossStatus>().MaxHP / 3)
-            {
-                indexMode = 1;
-                indexCount = bullets.Count - 6;
-                dashAttackCooldown = 6;
-            }
+
             else
             {
                 indexMode = 2;

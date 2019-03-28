@@ -19,7 +19,8 @@ public class BossStatus : MonoBehaviour
     {
         if(currentHP <= 0)
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
+            
         }
     }
 
