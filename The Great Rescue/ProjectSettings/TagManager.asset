@@ -15,6 +15,7 @@ TagManager:
   - BossBullet
   - Boss
   - SomeTransitionBullshit
+  - World
   layers:
   - Default
   - TransparentFX

@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Line Movement
-        if (Input.GetKey(KeyCode.W) && GetComponent<CheckUpAndDown>().isUpBlocked())
+        if (Input.GetKey(KeyCode.W))
         {
             oldPos = transform.position;
             travelVector = new Vector3(transform.position.x, originY + (moveDistance * highestLineIndex), transform.position.z);
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
             direction = transform.position.y - oldPos.y;
         }
 
-        else if (Input.GetKey(KeyCode.S) && GetComponent<CheckUpAndDown>().isDownBlocked())
+        else if (Input.GetKey(KeyCode.S))
         {
             oldPos = transform.position;
             travelVector = new Vector3(transform.position.x, originY + (moveDistance * lowestLineIndex), transform.position.z);

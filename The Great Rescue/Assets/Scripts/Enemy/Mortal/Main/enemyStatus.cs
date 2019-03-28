@@ -14,9 +14,12 @@ public class enemyStatus : MonoBehaviour
     // Update is called once per frame
     playerStatus PlayerStatus;
 
-    private void Awake()
+    HigScore WorldScore;
+
+    private void Start()
     {
         PlayerStatus = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStatus>();
+        WorldScore = GameObject.FindGameObjectWithTag("World").GetComponent<HigScore>();
     }
 
     void Update()
@@ -73,9 +76,10 @@ public class enemyStatus : MonoBehaviour
         {
 
             Instantiate(deathAnimation, gameObject.transform.position, Quaternion.identity);
+            WorldScore.highscoreGame += 10;
             OnEnemyJustDied();
-            Destroy(gameObject, 0.001f);
-
+            gameObject.SetActive(false);
+            
 
         }
 

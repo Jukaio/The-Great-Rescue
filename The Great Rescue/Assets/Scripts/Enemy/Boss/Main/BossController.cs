@@ -41,8 +41,10 @@ public class BossController : MonoBehaviour
         StartCoroutine(Shoot());
     }
 
+
     void Update()
     {
+
 
         //Y-Movement
         HighestLineVec = new Vector3(transform.position.x, Player.moveDistance * Player.returnHighestLine(), transform.position.z);

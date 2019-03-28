@@ -70,6 +70,9 @@ public class GameController : MonoBehaviour
                 enemies.Remove(enemies[i]);
             }
 
+            if (enemies[i].activeSelf == false)
+                enemies.Remove(enemies[i]);
+
         }
         
     }
