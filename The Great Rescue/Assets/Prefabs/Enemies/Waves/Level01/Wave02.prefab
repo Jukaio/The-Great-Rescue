@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8343866569382256379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8554644428394881178}
@@ -46,6 +46,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8330334109953768362}
     m_Modifications:
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -101,11 +106,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c, type: 3}
 --- !u!4 &123987174274404846 stripped
@@ -121,6 +121,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8330334109953768362}
     m_Modifications:
+    - target: {fileID: 9041516945724533669, guid: a30139ff2deb1b44badce143b9162b21,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy02 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 5228822930596653063, guid: a30139ff2deb1b44badce143b9162b21,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -175,11 +180,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9041516945724533669, guid: a30139ff2deb1b44badce143b9162b21,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy02 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a30139ff2deb1b44badce143b9162b21, type: 3}
@@ -271,6 +271,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8330334109953768362}
     m_Modifications:
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -325,11 +330,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c, type: 3}
@@ -496,6 +496,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8330334109953768362}
     m_Modifications:
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,11 +555,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c, type: 3}
@@ -646,6 +646,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8330334109953768362}
     m_Modifications:
+    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
+        type: 3}
+      propertyPath: m_Name
+      value: Hole (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 1313156091793616813, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -700,11 +705,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1313156091793616814, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c,
-        type: 3}
-      propertyPath: m_Name
-      value: Hole (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f9ba5bf3b914e49a456e3cf5ec2f6c, type: 3}

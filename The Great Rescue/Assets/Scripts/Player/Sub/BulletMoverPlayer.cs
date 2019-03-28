@@ -32,5 +32,9 @@ public class BulletMoverPlayer : MonoBehaviour
         { 
             Destroy(gameObject);
         }
+        if (collision.tag == "Boss")
+        {
+            Destroy(gameObject);
+        }
     }
 }

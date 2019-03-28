@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
             StartCoroutine(waitAndPlayGame(FadeOut.fadeTime));
         }
 
-        if(Time.time > nextWave)
+        if(Time.time > nextWave && currentWave < toSpawn.Length)
         {
             nextWave = Time.time + waveWait;
 

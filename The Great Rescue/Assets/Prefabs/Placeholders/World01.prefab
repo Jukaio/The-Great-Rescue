@@ -723,14 +723,14 @@ MonoBehaviour:
   enemies: []
   shot: {fileID: 6522818139512387649, guid: d9faf4d0f988b47419e7f0fa53795abe, type: 3}
   shotSpawn: {fileID: 5040457648467444145}
-  fireRate: 0.3
+  fireRate: 1.5
   meleeWeapon: {fileID: 957538033}
   swordSound: {fileID: 6921018495041220468, guid: f7d6f2618b6f26a46aa5f4a4d9a91763,
     type: 3}
   isInMeleeAttack: 0
   goesOutOfMeleeAttack: 0
-  meleeAttackRange: 1
-  meleeAttackCooldown: 2
+  meleeAttackRange: 1.1
+  meleeAttackCooldown: 1.8
   meleeAttackCooldownHolder: 0
   climaxAnimationSword: 0.3
   climaxAnimationSwordHolder: 0
@@ -776,8 +776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInMeleeRange: 0
   enemies: []
-  range: 6
-  spawner: {fileID: 5040457649025078100}
+  range: 4
+  spawner: {fileID: 0}
   explosion: {fileID: 4732573254222157043, guid: 23911248d79770f4991f982b9ae4a08c,
     type: 3}
   Boss: {fileID: 0}

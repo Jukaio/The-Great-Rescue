@@ -27,7 +27,7 @@ public class playerStatus : MonoBehaviour
         {
             Instantiate(deathSound, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject.transform.parent.gameObject);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(6);
         }
             
         
