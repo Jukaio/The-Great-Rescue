@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  healAmount: 20
+  healAmount: 1
   sound: {fileID: 5021387161401627128, guid: dc4b7323e7abd8e4aa8aa481c2a68639, type: 3}
 --- !u!61 &8856838473122151487
 BoxCollider2D:

@@ -59,15 +59,32 @@ public class playerStatus : MonoBehaviour
         {
             if (!waitActive)
             {
-                healthPoints = ApplyDamage(healthPoints, 1);
+                if (collision.gameObject.tag == "EnemyBullet")
+                {
+                    healthPoints = ApplyDamage(healthPoints, 1);
+                    HealthBarScript.health -= 10;
+                }
+                if(collision.gameObject.tag == "Enemy")
+                {
+                    healthPoints = ApplyDamage(healthPoints, 2);
+                    HealthBarScript.health -= 20;
+                }
+                if (collision.gameObject.tag == "Obstacle")
+                {
+                    healthPoints = ApplyDamage(healthPoints, 1);
+                    HealthBarScript.health -= 10;
+                }
+                if (collision.gameObject.tag == "BossBullet")
+                {
+                    healthPoints = ApplyDamage(healthPoints, 2);
+                    HealthBarScript.health -= 20;
+                }
 
                 //if (collision.gameObject.tag != "Obstacle" && collision.gameObject.tag != "BossBullet" && collision.gameObject.tag != "Boss")
                 //{
                 //    Destroy(collision.gameObject);
                 //}
                 //FIX THIS DAVID PLZ  <3
-
-                HealthBarScript.health -= 10;
                 animator.SetBool("isHurt", true); // play the animation of getting hurt
                 Instantiate(hitSound, Vector3.zero, Quaternion.identity);
 
@@ -78,8 +95,13 @@ public class playerStatus : MonoBehaviour
 
         if (collision.gameObject.tag == "Boss")
         {
-            healthPoints = ApplyDamage(healthPoints, 2);
-            HealthBarScript.health -= 20;
+            healthPoints = ApplyDamage(healthPoints, 3);
+            HealthBarScript.health -= 30;
+
+            animator.SetBool("isHurt", true); // play the animation of getting hurt
+            Instantiate(hitSound, Vector3.zero, Quaternion.identity);
+
+            StartCoroutine(Wait());
         }
 
     }

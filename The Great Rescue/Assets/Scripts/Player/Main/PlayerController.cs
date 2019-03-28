@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviour
     private float highestLineIndex;
     private float lowestLineIndex;
 
-  
 
+    bool isInAbility;
     private Vector3 travelVector;
     private float originY;
     public float moveSpeed;
@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        isInAbility = false;
         originY = transform.position.y;
         meleeAttackCooldownHolder = meleeAttackCooldown;
         climaxAnimationSwordHolder = climaxAnimationSword;
@@ -183,45 +184,13 @@ public class PlayerController : MonoBehaviour
             AdjustPosition();
         }
 
-        if (Input.GetKey(KeyCode.F) && playerStatus.specialBar == playerStatus.maxSpecialBar)
+        if (Input.GetKey(KeyCode.F) && PowerupBar.power >= 3 && !isInAbility)
         {
-            playerStatus.specialBar = 0;
-
-            foreach (GameObject enemy in enemies)
-            {
-                if (enemy.tag == "Enemy")
-                    enemy.GetComponent<enemyStatus>().healthPoints -= 50;
-            }
+            StartCoroutine(AbilityF());
+            
             Debug.Log("3");
         }
 
-        else if (Input.GetKey(KeyCode.F) && playerStatus.specialBar >= (playerStatus.maxSpecialBar / 3) * 2)
-        {
-            playerStatus.specialBar = 0;
-
-            foreach (GameObject enemy in enemies)
-            {
-                if (enemy.tag == "Enemy" && enemy.transform.position.x <= GetComponent<MeleeAttack>().range)
-                {
-                    enemy.GetComponent<enemyStatus>().healthPoints -= 50;
-                }
-            }
-            Debug.Log("2");
-        }
-
-        if (Input.GetKey(KeyCode.F) && playerStatus.specialBar >= (playerStatus.maxSpecialBar / 3))
-        {
-            playerStatus.specialBar = 0;
-
-            foreach (GameObject enemy in enemies)
-            {
-                if (enemy.tag == "Enemy" && Mathf.Round(enemy.transform.position.y) == Mathf.Round(gameObject.transform.position.y) - 1)
-                {
-                    enemy.GetComponent<enemyStatus>().healthPoints -= 50;
-                }
-            }
-            Debug.Log("1");
-        }
     }
 
     private void AdjustPosition() //Method for adjusting the player position
@@ -261,6 +230,18 @@ public class PlayerController : MonoBehaviour
     public float returnLowestLine()
     {
         return lowestLineIndex;
+    }
+
+    IEnumerator AbilityF()
+    {
+        isInAbility = true;
+        for (int i = 0; i <= 3; i++)
+        {
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            yield return new WaitForSeconds(0.15f);
+        }
+        PowerupBar.power -= 3;
+        isInAbility = false;
     }
 
     IEnumerator wait() //method for animation etc during sword

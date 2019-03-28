@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject Credits;
+    public GameObject Tutorial;
     public UIFader FadeOut;
 
 
@@ -48,12 +49,24 @@ public class MainMenu : MonoBehaviour
             Credits.SetActive(true);
     }
 
+    public void OpenTutorial()
+    {
+        if (Credits != null)
+            Tutorial.SetActive(true);
+    }
+
     public void CloseCredit()
     {
         if (Credits != null)
             Credits.SetActive(false);
     }
-    
+
+    public void CloseTutorial()
+    {
+        if (Credits != null)
+            Tutorial.SetActive(false);
+    }
+
     IEnumerator waitAndPlayGame(float time)
     {
         yield return new WaitForSeconds(time);

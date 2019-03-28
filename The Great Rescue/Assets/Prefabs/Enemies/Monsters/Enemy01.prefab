@@ -162,7 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6522818139512387649, guid: 52c606b3736558b4ca42c5877133ddb8, type: 3}
   shotSpawn: {fileID: 5419104187859698277}
-  fireRate: 5
+  fireRateMin: 2
+  fireRateMax: 4
 --- !u!61 &3525049716654619196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa8c1382a4765745b11456c697dded4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
 --- !u!114 &5011623032347582942
 MonoBehaviour:
   m_ObjectHideFlags: 0

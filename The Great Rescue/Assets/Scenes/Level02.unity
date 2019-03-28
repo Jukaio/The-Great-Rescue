@@ -238,7 +238,7 @@ PrefabInstance:
     - target: {fileID: 5040457649025078101, guid: 36883499fd3ba9646ae22671d8fa0b10,
         type: 3}
       propertyPath: waveWait
-      value: 20
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5040457649025078101, guid: 36883499fd3ba9646ae22671d8fa0b10,
         type: 3}
@@ -277,6 +277,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8172183293187460414, guid: 36883499fd3ba9646ae22671d8fa0b10,
+        type: 3}
+      propertyPath: speed
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192359677085158226, guid: 36883499fd3ba9646ae22671d8fa0b10,
+        type: 3}
+      propertyPath: speed
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649476314740, guid: 36883499fd3ba9646ae22671d8fa0b10,
+        type: 3}
+      propertyPath: speed
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649978576531, guid: 36883499fd3ba9646ae22671d8fa0b10,
+        type: 3}
+      propertyPath: speed
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36883499fd3ba9646ae22671d8fa0b10, type: 3}
@@ -885,6 +905,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: World01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5040457649025078100, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5040457648536481797, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,10 +989,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.225227
       objectReference: {fileID: 0}
-    - target: {fileID: 5040457649025078100, guid: 33db4284c67d4104a8e3d7d00b052958,
+    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 59127661}
+    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: range
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: meleeAttackRange
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 5040457648993511134, guid: 33db4284c67d4104a8e3d7d00b052958,
         type: 3}
@@ -978,26 +1018,6 @@ PrefabInstance:
         type: 3}
       propertyPath: healthPoints
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
-        type: 3}
-      propertyPath: spawner
-      value: 
-      objectReference: {fileID: 59127661}
-    - target: {fileID: 5040457649214928119, guid: 33db4284c67d4104a8e3d7d00b052958,
-        type: 3}
-      propertyPath: range
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
-        type: 3}
-      propertyPath: meleeAttackRange
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5040457649214928121, guid: 33db4284c67d4104a8e3d7d00b052958,
-        type: 3}
-      propertyPath: fireRate
-      value: 0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33db4284c67d4104a8e3d7d00b052958, type: 3}

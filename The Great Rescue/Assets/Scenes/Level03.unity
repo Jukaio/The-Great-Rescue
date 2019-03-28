@@ -538,7 +538,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6, y: -1.484698}
+  m_Offset: {x: -0.062251, y: -0.484698}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -549,7 +549,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5686364, y: 2.929406}
+  m_Size: {x: 2.4931388, y: 2.9294057}
   m_EdgeRadius: 0
 --- !u!1001 &1097326099
 PrefabInstance:
@@ -676,7 +676,7 @@ PrefabInstance:
     - target: {fileID: 3405436813073100341, guid: 7d342a839c974a94eac7bdaa61e6f818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.97
+      value: 7.28
       objectReference: {fileID: 0}
     - target: {fileID: 3405436814578404628, guid: 7d342a839c974a94eac7bdaa61e6f818,
         type: 3}
@@ -691,7 +691,12 @@ PrefabInstance:
     - target: {fileID: 3405436814578404628, guid: 7d342a839c974a94eac7bdaa61e6f818,
         type: 3}
       propertyPath: fireRate
-      value: 0.175
+      value: 0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405436814578404628, guid: 7d342a839c974a94eac7bdaa61e6f818,
+        type: 3}
+      propertyPath: reloadTime
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 3405436814578404626, guid: 7d342a839c974a94eac7bdaa61e6f818,
         type: 3}
@@ -1194,7 +1199,7 @@ PrefabInstance:
     - target: {fileID: 5040457649214928121, guid: 9f2f47326e255f949a49b454177b9cbe,
         type: 3}
       propertyPath: fireRate
-      value: 0.5
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 5040457648536481797, guid: 9f2f47326e255f949a49b454177b9cbe,
         type: 3}
@@ -1276,7 +1281,7 @@ PrefabInstance:
     - target: {fileID: 5040457649214928119, guid: 9f2f47326e255f949a49b454177b9cbe,
         type: 3}
       propertyPath: range
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5040457649214928116, guid: 9f2f47326e255f949a49b454177b9cbe,
         type: 3}

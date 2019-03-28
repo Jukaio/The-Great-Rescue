@@ -22,7 +22,7 @@ public class BulletMoverPlayer : MonoBehaviour
         Vector2 movement = new Vector2(1f, 0);
         transform.Translate(Time.deltaTime * speed * movement);
 
-        if (gameObject.transform.position.x >= 11)
+        if (gameObject.transform.position.x >= 10)
             Destroy(gameObject);
     }
 

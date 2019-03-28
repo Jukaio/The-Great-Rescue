@@ -24,11 +24,14 @@ public class healPowerUp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Instantiate(sound, gameObject.transform.position, Quaternion.identity);
-            collision.gameObject.GetComponent<playerStatus>().healthPoints += healAmount;
-            HealthBarScript.health += 20;
-            CooldownHeal.healCoolingDown = true;
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<playerStatus>().healthPoints < 10)
+            {
+                Instantiate(sound, gameObject.transform.position, Quaternion.identity);
+                collision.gameObject.GetComponent<playerStatus>().healthPoints += healAmount;
+                HealthBarScript.health += 10;
+                CooldownHeal.healCoolingDown = true;
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -6,15 +6,29 @@ public class EnemyShooting : MonoBehaviour
 {
     public GameObject shot;
     public Transform shotSpawn;
-    public float fireRate;
+    public float fireRateMin;
+    public float fireRateMax;
     private float nextFire;
 
     void Update()
     {
         if (Time.time > nextFire && gameObject.transform.position.x <= 11)
         {
-            nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            if (Random.value <= 0.4)
+            {
+                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            }
+            else if(Random.value > 0.4)
+            {
+                StartCoroutine(shootdouble());
+            }
+            nextFire = Time.time + Random.Range(fireRateMin, fireRateMax);
         }
+    }
+    IEnumerator shootdouble()
+    {
+        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        yield return new WaitForSeconds(0.4f);
+        Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
     }
 }
